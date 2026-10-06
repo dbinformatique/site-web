@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#21255C">
+<link rel="canonical" href="https://dbinformatique.cm/diagnostic.html">
+<title>Diagnostic informatique en 12 questions — D&B Informatique</title>
+<meta name="description" content="En 3 minutes, évaluez gratuitement l'état et les risques de l'informatique de votre entreprise. Résultat immédiat.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 188 188'%3E%3Crect width='188' height='188' rx='44' fill='%233E4CB8'/%3E%3Cg transform='translate(50,34) scale(1.06)'%3E%3Cpath d='M8 4 L8 92 L30 70 L46 108 L64 100 L48 63 L76 60 Z' fill='%23fff' stroke='%23fff' stroke-width='5' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+:root{--encre:#21255C;--indigo:#3E4CB8;--indigo-d:#33409F;--rouge:#D62F26;--corail:#FFB4AD;
+  --gris:#5A6472;--pale:#ECEEFA;--ligne:#E2E5F5;--ok:#1E7A4B;--okbg:#E8F6EE;--warn:#B85C00;--warnbg:#FFF3E4;--redbg:#FDEEED}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#F7F8FE;color:#1A1D33;line-height:1.55}
+.top{background:linear-gradient(150deg,#33409F,#21255C);color:#fff;padding:26px 20px 30px}
+.top .in{max-width:760px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:11px;margin-bottom:22px}
+.brand svg{width:40px;height:40px;border-radius:10px}
+.brand b{font-size:21px;font-weight:800;letter-spacing:-.6px;display:block;line-height:1}
+.brand b i{color:var(--corail);font-style:normal}
+.brand span{font-size:8.5px;letter-spacing:2.4px;color:#AEB7EA;display:block;margin-top:3px}
+.top h1{font-size:26px;font-weight:800;letter-spacing:-.6px;line-height:1.2}
+.top h1 em{font-style:normal;color:var(--corail)}
+.top p{color:#C6CCF2;margin-top:11px;font-size:14.5px;max-width:600px}
+main{max-width:760px;margin:-16px auto 60px;padding:0 16px}
+.card{background:#fff;border:1px solid var(--ligne);border-radius:14px;padding:22px;box-shadow:0 2px 4px rgba(33,37,92,.05),0 12px 30px rgba(33,37,92,.07);margin-bottom:16px}
+.prog{height:6px;background:var(--pale);border-radius:4px;overflow:hidden;margin-bottom:20px}
+.prog i{display:block;height:100%;background:var(--indigo);transition:width .3s}
+.num{font-size:11.5px;font-weight:800;letter-spacing:1.4px;color:var(--indigo);text-transform:uppercase;margin-bottom:8px}
+.q{font-size:19px;font-weight:800;color:var(--encre);line-height:1.35;margin-bottom:5px;letter-spacing:-.3px}
+.why{font-size:13.5px;color:var(--gris);margin-bottom:18px}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{border:1.5px solid var(--ligne);border-radius:11px;padding:14px 16px;cursor:pointer;font-size:15px;
+  transition:.14s;background:#fff;text-align:left;width:100%;display:flex;align-items:center;gap:12px;font-family:inherit;color:inherit}
+.opt:hover{border-color:var(--indigo);background:#FBFCFF}
+.opt .k{width:24px;height:24px;border-radius:50%;border:2px solid var(--ligne);flex:0 0 24px}
+.opt.on{border-color:var(--indigo);background:var(--pale)}
+.opt.on .k{border-color:var(--indigo);background:var(--indigo);box-shadow:inset 0 0 0 3px #fff}
+.nav{display:flex;gap:10px;margin-top:20px}
+.btn{padding:13px 22px;border-radius:10px;font-weight:700;font-size:15px;background:var(--indigo);color:#fff;
+  border:none;cursor:pointer;font-family:inherit;transition:.15s}
+.btn:hover{background:var(--indigo-d)}
+.btn.sec{background:#fff;color:var(--encre);border:1px solid var(--ligne)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn.full{width:100%}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:12.5px;font-weight:700;color:var(--encre);margin-bottom:5px}
+input{width:100%;padding:12px 14px;border:1px solid var(--ligne);border-radius:10px;font-size:15px;font-family:inherit;outline:none}
+input:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(62,76,184,.12)}
+.score{text-align:center;padding:10px 0 6px}
+.score .big{font-size:64px;font-weight:800;letter-spacing:-3px;line-height:1}
+.score .sur{font-size:20px;color:var(--gris);font-weight:600}
+.score .lab{font-size:17px;font-weight:800;margin-top:8px;letter-spacing:-.2px}
+.jauge{height:12px;background:var(--pale);border-radius:7px;overflow:hidden;margin:18px 0 6px}
+.jauge i{display:block;height:100%;border-radius:7px}
+.echelle{display:flex;justify-content:space-between;font-size:11px;color:var(--gris);margin-bottom:20px}
+.bloc{border-left:4px solid;border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:11px;font-size:14px}
+.bloc b{display:block;margin-bottom:4px;font-size:14.5px}
+.bloc.red{background:var(--redbg);border-color:var(--rouge)}
+.bloc.red b{color:#8A1F18}
+.bloc.warn{background:var(--warnbg);border-color:var(--warn)}
+.bloc.warn b{color:#6B3A00}
+.bloc.ok{background:var(--okbg);border-color:var(--ok)}
+.bloc.ok b{color:#14522F}
+h3{font-size:12.5px;font-weight:800;letter-spacing:1.3px;color:var(--indigo);text-transform:uppercase;margin:22px 0 12px}
+.cta{background:linear-gradient(150deg,#33409F,#21255C);color:#fff;border-radius:14px;padding:24px;text-align:center;margin-top:18px}
+.cta h2{font-size:21px;font-weight:800;margin-bottom:9px;letter-spacing:-.4px}
+.cta h2 em{font-style:normal;color:var(--corail)}
+.cta p{color:#C6CCF2;font-size:14.5px;margin-bottom:18px}
+.cta a{display:inline-block;background:#fff;color:var(--encre);padding:14px 26px;border-radius:10px;font-weight:800;
+  text-decoration:none;font-size:16px;margin:5px}
+.cta a.wa{background:#25D366;color:#0B3D1E}
+.cta .tel{font-size:26px;font-weight:800;color:var(--corail);letter-spacing:-.8px;margin-bottom:14px;display:block}
+.mini{font-size:12.5px;color:var(--gris);text-align:center;margin-top:16px;line-height:1.7}
+.pied{text-align:center;padding:24px 16px;font-size:12px;color:var(--gris)}
+@media(max-width:600px){.top h1{font-size:22px}.q{font-size:17.5px}.score .big{font-size:52px}.card{padding:18px}}
+@media print{.nav,.cta,.top{display:none}}
+.retour{background:#16193F;color:#C9CFF4;font-size:14px}
+.retour .in2{max-width:820px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:16px}
+.retour a{color:#C9CFF4;text-decoration:none;font-weight:600}
+.retour a:hover{color:#fff;text-decoration:underline}
+@media print{.retour{display:none}}
+</style>
+</head>
+<body>
+<div class="retour"><div class="in2">
+  <a href="index.html">&#8592; Retour au site D&amp;B Informatique</a>
+  <a href="contact.html">Nous contacter</a>
+</div></div>
+<div class="top"><div class="in">
+  <div class="brand">
+    <svg viewBox="0 0 188 188"><rect width="188" height="188" rx="44" fill="#3E4CB8"/>
+      <g transform="translate(50,34) scale(1.06)"><path d="M8 4 L8 92 L30 70 L46 108 L64 100 L48 63 L76 60 Z" fill="#fff" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></g></svg>
+    <div><b>D<i>&amp;</i>B</b><span>INFORMATIQUE</span></div>
+  </div>
+  <h1>Votre informatique tiendrait-elle <em>trois jours d'arrêt&nbsp;?</em></h1>
+  <p>Douze questions, trois minutes, un résultat immédiat. Gratuit et sans engagement.
+     Vous saurez exactement où votre entreprise est exposée — et par quoi commencer.</p>
+</div></div>
+
+<main>
+  <div class="card" id="zone"></div>
+  <div class="pied">D&amp;B Informatique · Yaoundé, Cameroun · +237 674 496 342<br>
+    Vos réponses restent sur votre appareil tant que vous ne les envoyez pas.<br>
+    <a href="index.html" style="color:#3E4CB8">dbinformatique.cm</a> · <a href="souverain.html" style="color:#3E4CB8">Socle Souverain</a> · <a href="offres.html" style="color:#3E4CB8">Nos offres</a> · <a href="contact.html" style="color:#3E4CB8">Contact</a></div>
+</main>
+
+<script>
+'use strict';
+const TEL = '237674496342';
+const Q = [
+  { q: "Si vos ordinateurs étaient inaccessibles pendant trois jours, que se passerait-il ?",
+    why: "C'est la question qui révèle votre dépendance réelle au système d'information.",
+    r: [["L'activité s'arrêterait complètement", 0], ["On travaillerait très difficilement", 1],
+        ["On se débrouillerait sur papier", 2], ["Aucun impact notable", 3]] },
+  { q: "À quand remonte la dernière fois où vous avez vérifié qu'une sauvegarde se restaure ?",
+    why: "Presque toutes les entreprises ont une sauvegarde. Très peu savent si elle fonctionne.",
+    r: [["Jamais, ou je ne sais pas", 0], ["Il y a plus d'un an", 1],
+        ["Dans les six derniers mois", 2], ["Nous la testons régulièrement", 3]] },
+  { q: "Où sont stockées vos données les plus importantes ?",
+    why: "Une copie unique, au même endroit que l'original, n'est pas une sauvegarde.",
+    r: [["Sur les ordinateurs des collaborateurs", 0], ["Sur un serveur, sans copie hors site", 1],
+        ["Sur un serveur avec copie externe", 2], ["Serveur, copie hors site et cloud chiffré", 3]] },
+  { q: "Qui s'occupe de votre informatique aujourd'hui ?",
+    why: "Un dépanneur règle les pannes. Un responsable construit un système.",
+    r: [["Personne en particulier", 0], ["Un proche ou un technicien appelé au besoin", 1],
+        ["Un prestataire, sans contrat écrit", 2], ["Un prestataire sous contrat, ou un salarié dédié", 3]] },
+  { q: "Combien de temps s'écoule entre une panne et sa résolution ?",
+    why: "Sans engagement écrit, le délai dépend de la disponibilité de quelqu'un d'autre.",
+    r: [["Plusieurs jours, c'est imprévisible", 0], ["Un à deux jours", 1],
+        ["Quelques heures", 2], ["Un délai garanti par contrat", 3]] },
+  { q: "Vos postes disposent-ils d'un antivirus à jour et administré de façon centralisée ?",
+    why: "Un antivirus expiré sur un seul poste suffit à contaminer tout le réseau.",
+    r: [["Non, ou je ne sais pas", 0], ["Chacun gère le sien", 1],
+        ["Oui, mais sans supervision", 2], ["Oui, centralisé et supervisé", 3]] },
+  { q: "Comment vos collaborateurs choisissent-ils leurs mots de passe ?",
+    why: "Le mot de passe partagé est la première porte d'entrée des intrusions.",
+    r: [["Un mot de passe commun à tous", 0], ["Chacun fait comme il veut", 1],
+        ["Il existe une règle, peu appliquée", 2], ["Politique appliquée et vérifiée", 3]] },
+  { q: "Votre réseau est-il protégé par un pare-feu professionnel ?",
+    why: "La box de l'opérateur n'est pas un pare-feu d'entreprise.",
+    r: [["Non, juste la box internet", 0], ["Je ne sais pas", 1],
+        ["Oui, mais sans suivi des règles", 2], ["Oui, configuré et mis à jour", 3]] },
+  { q: "Que se passe-t-il quand un collaborateur quitte l'entreprise ?",
+    why: "Les accès oubliés d'anciens salariés sont une faille classique et sous-estimée.",
+    r: [["Rien de particulier", 0], ["On coupe sa messagerie", 1],
+        ["On coupe la plupart de ses accès", 2], ["Procédure écrite, tous accès révoqués", 3]] },
+  { q: "Savez-vous ce que votre informatique vous a coûté l'an dernier, tout compris ?",
+    why: "Dépannages, remplacements en urgence, heures perdues, licences oubliées. Presque personne ne le sait.",
+    r: [["Aucune idée", 0], ["Une vague estimation", 1],
+        ["Approximativement", 2], ["Précisément, c'est budgété", 3]] },
+  { q: "Vos collaborateurs ont-ils été formés à reconnaître une tentative d'arnaque par courriel ?",
+    why: "La faille la plus exploitée n'est pas technique : c'est l'humain.",
+    r: [["Jamais", 0], ["On en a parlé une fois", 1],
+        ["Une sensibilisation a eu lieu", 2], ["Sensibilisation régulière et testée", 3]] },
+  { q: "Existe-t-il un plan écrit décrivant quoi faire en cas de sinistre majeur ?",
+    why: "Le jour où le serveur brûle, personne n'improvise correctement.",
+    r: [["Non", 0], ["C'est dans nos têtes", 1],
+        ["Quelques notes existent", 2], ["Un plan écrit, testé au moins une fois", 3]] }
+];
+
+let i = 0, rep = new Array(Q.length).fill(null);
+const $ = s => document.querySelector(s);
+
+function question() {
+  const q = Q[i], pc = (i / Q.length) * 100;
+  $('#zone').innerHTML =
+    `<div class="prog"><i style="width:${pc}%"></i></div>
+     <div class="num">Question ${i + 1} sur ${Q.length}</div>
+     <div class="q">${q.q}</div>
+     <div class="why">${q.why}</div>
+     <div class="opts">` +
+      q.r.map((r, k) => `<button class="opt ${rep[i] === k ? 'on' : ''}" onclick="rep_(${k})">
+        <span class="k"></span><span>${r[0]}</span></button>`).join('') +
+     `</div>
+     <div class="nav">
+       ${i > 0 ? `<button class="btn sec" onclick="prec()">Retour</button>` : ''}
+       <button class="btn" id="suiv" ${rep[i] === null ? 'disabled' : ''} onclick="suiv()">
+         ${i === Q.length - 1 ? 'Voir mon résultat' : 'Suivant'}</button>
+     </div>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function rep_(k) { rep[i] = k; question(); setTimeout(suiv, 260); }
+function prec() { if (i > 0) { i--; question(); } }
+function suiv() { if (rep[i] === null) return; if (i < Q.length - 1) { i++; question(); } else coord(); }
+
+function coord() {
+  $('#zone').innerHTML =
+    `<div class="prog"><i style="width:100%"></i></div>
+     <div class="num">Dernière étape</div>
+     <div class="q">Votre résultat est prêt</div>
+     <div class="why">Indiquez votre prénom et le nom de votre entreprise pour l'afficher.
+       Nous n'envoyons rien automatiquement : c'est vous qui décidez de nous transmettre le résultat, ou non.</div>
+     <div class="field"><label for="n">Votre nom</label><input id="n" placeholder="Prénom et nom"></div>
+     <div class="field"><label for="e">Votre entreprise</label><input id="e" placeholder="Raison sociale"></div>
+     <div class="field"><label for="t">Téléphone (facultatif)</label><input id="t" type="tel" placeholder="6XX XX XX XX"></div>
+     <div class="nav"><button class="btn full" onclick="resultat()">Afficher mon diagnostic</button></div>
+     <div class="mini">Aucune donnée n'est transmise sans votre action.</div>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const AXES = [
+  { nom: 'Continuité et sauvegarde', q: [0, 1, 2, 11] },
+  { nom: 'Accompagnement et réactivité', q: [3, 4] },
+  { nom: 'Sécurité technique', q: [5, 6, 7, 8] },
+  { nom: 'Pilotage et culture', q: [9, 10] }
+];
+const CONSEILS = {
+  0: ["Testez une restauration de sauvegarde cette semaine", "Une sauvegarde jamais testée est une sauvegarde imaginaire. Prenez un fichier au hasard, tentez de le restaurer, chronométrez. Ce test ne coûte rien et vous dira en une heure si vous êtes réellement protégé."],
+  1: ["Emportez une copie hors des locaux", "Un incendie, un dégât des eaux ou un vol emporte l'original et la copie s'ils sont dans la même pièce. Une copie chiffrée hors site est la mesure la plus rentable qui existe."],
+  2: ["Mettez fin au mot de passe partagé", "C'est gratuit et cela se fait en une matinée. Un compte par personne, et vous saurez enfin qui a fait quoi."],
+  3: ["Écrivez la procédure de départ d'un collaborateur", "Dix lignes suffisent : messagerie, poste, serveur, application métier, téléphone, badge. Elle vous évitera un jour un vrai problème."],
+  4: ["Calculez votre coût informatique réel de l'an dernier", "Additionnez dépannages, remplacements, licences et heures perdues. Le chiffre surprend toujours — et il est presque toujours supérieur au coût d'un contrat de maintenance."],
+  5: ["Formez vos équipes à repérer une arnaque par courriel", "Une demi-journée de sensibilisation réduit davantage votre risque que la plupart des achats de matériel."]
+};
+
+function resultat() {
+  const nom = ($('#n') || {}).value || '', ent = ($('#e') || {}).value || '', tel = ($('#t') || {}).value || '';
+  const pts = rep.reduce((s, k, j) => s + Q[j].r[k][1], 0);
+  const max = Q.length * 3, pc = Math.round(pts / max * 100);
+  let niv, coul, txt;
+  if (pc < 35) { niv = 'Exposition critique'; coul = 'var(--rouge)';
+    txt = "Votre entreprise est aujourd'hui vulnérable sur plusieurs points simultanés. Un incident banal — un disque qui lâche, un courriel piégé ouvert par un collaborateur — peut suffire à interrompre votre activité plusieurs jours. La bonne nouvelle : les trois premières mesures ci-dessous coûtent peu et changent presque tout."; }
+  else if (pc < 60) { niv = 'Exposition élevée'; coul = 'var(--warn)';
+    txt = "Les bases sont partiellement là, mais des zones entières restent découvertes. C'est la situation la plus fréquente, et la plus trompeuse : tout fonctionne jusqu'au jour où cela ne fonctionne plus. Traitez d'abord les points rouges ci-dessous."; }
+  else if (pc < 80) { niv = 'Exposition modérée'; coul = 'var(--indigo)';
+    txt = "Votre informatique est correctement tenue. Il reste des angles morts, souvent sur la continuité et la formation des équipes, mais vous partez d'un bon niveau. L'enjeu pour vous n'est plus de rattraper un retard : c'est de structurer et de documenter."; }
+  else { niv = 'Bonne maîtrise'; coul = 'var(--ok)';
+    txt = "Votre système d'information est bien tenu, au-dessus de ce que nous observons habituellement. Votre sujet n'est plus le risque de base : c'est l'optimisation, la gouvernance et l'exploitation de vos données."; }
+
+  const axes = AXES.map(a => {
+    const p = a.q.reduce((s, j) => s + Q[j].r[rep[j]][1], 0), m = a.q.length * 3;
+    return { nom: a.nom, pc: Math.round(p / m * 100) };
+  });
+  const faibles = rep.map((k, j) => ({ j, v: Q[j].r[k][1] })).filter(x => x.v <= 1).map(x => x.j);
+  const prio = [];
+  if (faibles.includes(1)) prio.push(CONSEILS[0]);
+  if (faibles.includes(2)) prio.push(CONSEILS[1]);
+  if (faibles.includes(6)) prio.push(CONSEILS[2]);
+  if (faibles.includes(8)) prio.push(CONSEILS[3]);
+  if (faibles.includes(9)) prio.push(CONSEILS[4]);
+  if (faibles.includes(10)) prio.push(CONSEILS[5]);
+  if (!prio.length) prio.push(["Passez du curatif au préventif",
+    "Vos fondamentaux sont solides. L'étape suivante consiste à formaliser : plan de continuité écrit, tableau de bord des coûts, et revue trimestrielle de votre système d'information."]);
+
+  const msg = encodeURIComponent(
+    `Bonjour, je viens de faire le diagnostic en 12 questions sur votre site.\n` +
+    `Entreprise : ${ent || '(à préciser)'}\nNom : ${nom || '(à préciser)'}\n` +
+    `Score obtenu : ${pc} % — ${niv}\nJ'aimerais en discuter.`);
+
+  $('#zone').innerHTML =
+    `<div class="score">
+       <div class="big" style="color:${coul}">${pc}<span class="sur"> %</span></div>
+       <div class="lab" style="color:${coul}">${niv}</div>
+       ${ent ? `<div class="mini" style="margin-top:6px">Diagnostic établi pour ${ent}</div>` : ''}
+     </div>
+     <div class="jauge"><i style="width:${pc}%;background:${coul}"></i></div>
+     <div class="echelle"><span>Critique</span><span>Élevée</span><span>Modérée</span><span>Maîtrisée</span></div>
+     <p style="font-size:15px">${txt}</p>
+
+     <h3>Le détail par domaine</h3>` +
+     axes.map(a => `<div style="margin-bottom:12px">
+       <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:5px">
+         <b>${a.nom}</b><span style="color:${a.pc < 40 ? 'var(--rouge)' : a.pc < 70 ? 'var(--warn)' : 'var(--ok)'};font-weight:800">${a.pc} %</span></div>
+       <div class="jauge" style="height:8px;margin:0"><i style="width:${a.pc}%;background:${a.pc < 40 ? 'var(--rouge)' : a.pc < 70 ? 'var(--warn)' : 'var(--ok)'}"></i></div>
+     </div>`).join('') +
+
+     `<h3>Ce que nous vous recommandons de faire en premier</h3>` +
+     prio.slice(0, 3).map((c, k) => `<div class="bloc ${k === 0 ? 'red' : k === 1 ? 'warn' : 'ok'}">
+       <b>${k + 1}. ${c[0]}</b>${c[1]}</div>`).join('') +
+
+     `<div class="mini" style="text-align:left;margin-top:18px">Ces trois mesures sont applicables par vos propres moyens,
+       sans nous. Nous vous les donnons parce qu'un diagnostic honnête vaut mieux qu'un devis.</div>
+
+     <div class="cta">
+       <h2>Vous voulez le <em>diagnostic complet&nbsp;?</em></h2>
+       <p>Quarante-cinq minutes dans vos locaux, offertes et sans engagement. Nous regardons votre installation réelle,
+         et vous repartez avec une feuille de route chiffrée.</p>
+       <span class="tel">+237 674 496 342</span>
+       <a class="wa" href="https://wa.me/${TEL}?text=${msg}">Envoyer mon résultat sur WhatsApp</a>
+       <a href="tel:+${TEL}">Appeler maintenant</a>
+     </div>
+
+     <div class="nav" style="margin-top:16px">
+       <button class="btn sec" onclick="window.print()">Imprimer mon diagnostic</button>
+       <button class="btn sec" onclick="location.reload()">Recommencer</button>
+     </div>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+question();
+</script>
+</body>
+</html>
