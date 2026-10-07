@@ -21,6 +21,8 @@ Les anciennes adresses en `.html` (`offres.html`, `souverain.html`, `parcours.ht
 Tous les liens et ressources sont absolus depuis la racine (`/assets/…`, `/offres/`) : pour un aperçu local, lancer un petit serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 
 - `assets/style.css` : toute la mise en forme (couleurs dans le bloc `:root`).
+- `assets/motif-circuit.svg`, `assets/motif-circuit-clair.svg` : motif de fond « circuit imprimé » (tuile raccordable).
+- `assets/img/` : portrait du fondateur (WebP 480/960 px, repli PNG), détouré, sans métadonnées.
 - `assets/js/` : `site.js` (menu), `contact.js` (formulaire), `diagnostic.js` (questionnaire).
 - `.well-known/security.txt` : contact pour signaler une faille (à renouveler avant le 1er octobre 2027).
 - `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml` : fichiers techniques — ne pas supprimer.

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   D&B Informatique — feuille de style v2 (octobre 2026)
+   D&B Informatique — feuille de style v4 (octobre 2026)
    Palette : encre #21255C · indigo #3E4CB8 · rouge #D62F26
    corail #FFB4AD (fonds sombres uniquement) · gris #5A6472
    Aucune ressource externe : polices système, aucun CDN, aucun traceur.
@@ -100,11 +100,18 @@ nav.menu .menu-cta a.btn.fant[aria-current="page"]{border-color:var(--indigo)}
 /* ───── sections ───── */
 section{padding:84px 0}
 section.serre{padding:60px 0}
-section.pale{background:var(--pale-2);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+section.pale{position:relative;isolation:isolate;background:var(--pale-2);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
 section.encre{background:linear-gradient(150deg,var(--indigo-f) 0%,var(--encre) 70%);color:#fff;position:relative;overflow:hidden}
 section.encre::after{content:"";position:absolute;right:-180px;top:-220px;width:520px;height:520px;border-radius:50%;
   background:radial-gradient(closest-side,rgba(255,180,173,.16),transparent);pointer-events:none}
 section.encre .wrap{position:relative;z-index:1}
+/* motif « circuit imprimé » : visible sur les bords, effacé sous le texte */
+section.pale::before,section.encre::before,.cta::before,footer.bas::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:url(motif-circuit.svg) 150px 40px/300px 300px repeat;opacity:.075;
+  -webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 34%,transparent 66%,#000 100%);
+  mask-image:linear-gradient(90deg,#000 0%,transparent 34%,transparent 66%,#000 100%)}
+section.pale::before{z-index:-1}
+section.encre::before,.cta::before,footer.bas::before{background-image:url(motif-circuit-clair.svg);opacity:.07}
 section.encre h2,section.encre h3{color:#fff}
 section.encre p{color:#C9CFF4}
 .entete{max-width:70ch;margin-bottom:44px}
@@ -117,9 +124,10 @@ section.encre p{color:#C9CFF4}
     radial-gradient(700px 380px at -8% 110%,rgba(214,47,38,.07),transparent 70%),
     linear-gradient(180deg,var(--pale-2) 0%,#fff 100%);
   padding:76px 0 70px;border-bottom:1px solid var(--ligne)}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
-  background-image:radial-gradient(rgba(33,37,92,.10) 1px,transparent 1px);background-size:22px 22px;
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 75%);mask-image:linear-gradient(180deg,#000 0%,transparent 75%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;
+  background:url(motif-circuit.svg) 40px -30px/300px 300px repeat;
+  -webkit-mask-image:radial-gradient(130% 150% at 100% 0%,#000 22%,rgba(0,0,0,.4) 55%,transparent 88%);
+  mask-image:radial-gradient(130% 150% at 100% 0%,#000 22%,rgba(0,0,0,.4) 55%,transparent 88%)}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{max-width:18ch}
 .hero h1 em{font-style:normal;color:var(--rouge)}
@@ -268,7 +276,8 @@ form.f{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padd
 .texte li{margin-bottom:6px}
 
 /* ───── pied ───── */
-footer.bas{background:var(--encre);color:#C9CFF4;padding:60px 0 28px;font-size:15px}
+footer.bas{position:relative;isolation:isolate;overflow:hidden;background:var(--encre);color:#C9CFF4;padding:60px 0 28px;font-size:15px}
+footer.bas::before{z-index:-1}
 footer.bas .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:34px;
   border-bottom:1px solid rgba(255,255,255,.14)}
 footer.bas img{height:44px;width:auto;margin-bottom:16px}
@@ -335,6 +344,41 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
 .mini{font-size:13px;color:var(--gris);text-align:center;margin-top:16px;line-height:1.7}
 .mini.g{text-align:left}
 
+
+/* ───── page « Le fondateur » : portrait incrusté ───── */
+.hero.court.hero-fondateur{padding-bottom:0}
+.fondateur{display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr);gap:clamp(36px,6vw,84px);align-items:end}
+.fondateur .portrait{order:-1}
+.fondateur-texte{align-self:center;padding:4px 0 60px}
+.fondateur-texte h1{max-width:20ch}
+.portrait{position:relative;margin:0;isolation:isolate}
+.portrait::before,.portrait::after{content:"";position:absolute;left:0;right:0;bottom:0;top:23%;border-radius:30px 30px 0 0;pointer-events:none}
+.portrait::before{z-index:-2;
+  background:radial-gradient(58% 48% at 50% 36%,rgba(132,146,245,.55),transparent 74%),
+             linear-gradient(165deg,var(--indigo) 0%,var(--encre) 68%,var(--encre-f) 100%);
+  box-shadow:0 -6px 50px -16px rgba(33,37,92,.45)}
+.portrait::after{z-index:-1;background:url(motif-circuit-clair.svg) 24px 12px/300px 300px repeat;opacity:.11}
+.portrait picture{display:block}
+.portrait img{width:100%;height:auto;
+  filter:drop-shadow(0 20px 26px rgba(13,16,48,.40)) drop-shadow(0 3px 6px rgba(13,16,48,.26))}
+.portrait-badge{position:absolute;z-index:1;right:-26px;bottom:64px;max-width:215px;background:#fff;border:1px solid var(--ligne);
+  border-radius:16px;padding:14px 18px;box-shadow:var(--ombre-f);font-size:13.5px;line-height:1.35;color:var(--gris);font-weight:600}
+.portrait-badge b{display:block;font-size:30px;line-height:1;font-weight:900;color:var(--rouge);letter-spacing:-.02em;margin-bottom:4px}
+.certifs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:24px}
+.certifs li{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--encre);
+  background:#fff;border:1px solid var(--ligne);border-radius:999px;padding:6px 13px 6px 10px}
+.certifs svg{width:16px;height:16px;color:var(--ok);flex:0 0 auto}
+.fondateur-texte .actions{margin-top:26px}
+@media (max-width:960px){
+  .fondateur{grid-template-columns:1fr;gap:34px}
+  .fondateur .portrait{order:0;justify-self:center;width:100%;max-width:360px}
+  .fondateur-texte{padding-bottom:0}
+}
+@media (max-width:760px){
+  .portrait-badge{right:-4px;bottom:34px;max-width:180px;padding:11px 14px;font-size:12.5px}
+  .portrait-badge b{font-size:24px}
+}
+
 /* ───── responsive ───── */
 @media (max-width:1120px){
   .burger{display:flex}
@@ -386,6 +430,7 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
   .btn:hover,.carte:hover{transform:none}
 }
 @media print{
+  .hero::before,section.pale::before,section.encre::before,.cta::before,.portrait::before,.portrait::after{display:none}
   header.top,.wa,.burger,.quiz .nav,.quiz .cta-q,footer.bas{display:none}
   body{font-size:11pt}
   .hero,section.encre,.cta{background:#fff!important;color:#000!important}
