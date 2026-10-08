@@ -18,4 +18,19 @@
   });
   m.addEventListener('click', function (e) { if (e.target.closest('a')) fermer(); });
   window.addEventListener('resize', function () { if (window.innerWidth > 1120) fermer(); });
+
+  // page unique : le lien de la section affichée est mis en évidence dans le menu
+  if (location.pathname !== '/' || !('IntersectionObserver' in window)) return;
+  var liens = {}, tous = [];
+  Array.prototype.forEach.call(m.querySelectorAll('a[href^="/#"]'), function (a) {
+    liens[a.getAttribute('href').slice(2)] = a; tous.push(a);
+  });
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      tous.forEach(function (a) { a.classList.remove('actif'); });
+      if (liens[e.target.id]) liens[e.target.id].classList.add('actif');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  Array.prototype.forEach.call(document.querySelectorAll('main section[id]'), function (s) { obs.observe(s); });
 })();

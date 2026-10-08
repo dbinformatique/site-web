@@ -93,8 +93,10 @@ function h(tag, attrs) {
   }
   return el;
 }
+let premierAffichage = true;
 function afficher(...noeuds) {
   zone.replaceChildren(...noeuds);
+  if (premierAffichage) { premierAffichage = false; return; }
   const t = document.getElementById('diag-titre');
   if (t) t.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
 }

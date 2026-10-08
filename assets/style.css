@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   D&B Informatique — feuille de style v4 (octobre 2026)
+   D&B Informatique — feuille de style v5 (octobre 2026)
    Palette : encre #21255C · indigo #3E4CB8 · rouge #D62F26
    corail #FFB4AD (fonds sombres uniquement) · gris #5A6472
    Aucune ressource externe : polices système, aucun CDN, aucun traceur.
@@ -59,7 +59,7 @@ nav.menu{display:flex;align-items:center;gap:2px}
 nav.menu a{color:var(--encre);font-weight:600;font-size:15px;padding:9px 12px;border-radius:10px;
   text-decoration:none;white-space:nowrap}
 nav.menu a:hover{background:var(--pale);color:var(--encre)}
-nav.menu a[aria-current="page"]{color:var(--indigo);background:var(--pale)}
+nav.menu a[aria-current="page"],nav.menu a.actif{color:var(--indigo);background:var(--pale)}
 .menu-cta{display:flex;gap:8px;margin-left:12px}
 nav.menu .menu-cta a{padding:10px 16px}
 nav.menu .menu-cta a.btn.primaire{color:#fff;background:var(--rouge)}
@@ -98,8 +98,8 @@ nav.menu .menu-cta a.btn.fant[aria-current="page"]{border-color:var(--indigo)}
 .centre .actions{justify-content:center}
 
 /* ───── sections ───── */
-section{padding:84px 0}
-section.serre{padding:60px 0}
+section{padding:60px 0}
+section.serre{padding:44px 0}
 section.pale{position:relative;isolation:isolate;background:var(--pale-2);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
 section.encre{background:linear-gradient(150deg,var(--indigo-f) 0%,var(--encre) 70%);color:#fff;position:relative;overflow:hidden}
 section.encre::after{content:"";position:absolute;right:-180px;top:-220px;width:520px;height:520px;border-radius:50%;
@@ -114,7 +114,7 @@ section.pale::before{z-index:-1}
 section.encre::before,.cta::before,footer.bas::before{background-image:url(motif-circuit-clair.svg);opacity:.07}
 section.encre h2,section.encre h3{color:#fff}
 section.encre p{color:#C9CFF4}
-.entete{max-width:70ch;margin-bottom:44px}
+.entete{max-width:70ch;margin-bottom:30px}
 .entete.centre{margin-left:auto;margin-right:auto}
 
 /* ───── héros d'accueil (clair) ───── */
@@ -123,7 +123,7 @@ section.encre p{color:#C9CFF4}
     radial-gradient(900px 420px at 92% -8%,rgba(62,76,184,.14),transparent 70%),
     radial-gradient(700px 380px at -8% 110%,rgba(214,47,38,.07),transparent 70%),
     linear-gradient(180deg,var(--pale-2) 0%,#fff 100%);
-  padding:76px 0 70px;border-bottom:1px solid var(--ligne)}
+  padding:60px 0 56px;border-bottom:1px solid var(--ligne)}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;
   background:url(motif-circuit.svg) 40px -30px/300px 300px repeat;
   -webkit-mask-image:radial-gradient(130% 150% at 100% 0%,#000 22%,rgba(0,0,0,.4) 55%,transparent 88%);
@@ -156,7 +156,7 @@ section.encre p{color:#C9CFF4}
 .apercu .ap-pied svg{width:20px;height:20px;color:var(--indigo);flex:0 0 auto}
 
 /* ───── bandeau de confiance ───── */
-.confiance{background:#fff;border-bottom:1px solid var(--ligne);padding:30px 0}
+.confiance{background:#fff;border-bottom:1px solid var(--ligne);padding:24px 0}
 .confiance .wrap{display:grid;grid-template-columns:1.7fr repeat(4,1fr);gap:22px;align-items:center}
 .confiance .intro{font-size:14.5px;color:var(--gris);font-weight:600;line-height:1.45}
 .confiance .intro b{display:block;color:var(--encre);font-size:16.5px}
@@ -165,7 +165,7 @@ section.encre p{color:#C9CFF4}
 .confiance .c span{display:block;font-size:13.5px;color:var(--gris);margin-top:4px;line-height:1.35}
 
 /* ───── en-tête des pages intérieures (clair) ───── */
-.hero.court{padding:56px 0 52px}
+.hero.court{padding:40px 0 36px}
 .hero.court h1{max-width:24ch}
 .fil{display:flex;gap:8px;flex-wrap:wrap;list-style:none;font-size:14px;color:var(--gris);margin-bottom:18px}
 .fil a{color:var(--gris);text-decoration:none}
@@ -345,38 +345,89 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
 .mini.g{text-align:left}
 
 
-/* ───── page « Le fondateur » : portrait incrusté ───── */
-.hero.court.hero-fondateur{padding-bottom:0}
-.fondateur{display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr);gap:clamp(36px,6vw,84px);align-items:end}
-.fondateur .portrait{order:-1}
-.fondateur-texte{align-self:center;padding:4px 0 60px}
-.fondateur-texte h1{max-width:20ch}
-.portrait{position:relative;margin:0;isolation:isolate}
-.portrait::before,.portrait::after{content:"";position:absolute;left:0;right:0;bottom:0;top:23%;border-radius:30px 30px 0 0;pointer-events:none}
-.portrait::before{z-index:-2;
-  background:radial-gradient(58% 48% at 50% 36%,rgba(132,146,245,.55),transparent 74%),
-             linear-gradient(165deg,var(--indigo) 0%,var(--encre) 68%,var(--encre-f) 100%);
-  box-shadow:0 -6px 50px -16px rgba(33,37,92,.45)}
-.portrait::after{z-index:-1;background:url(motif-circuit-clair.svg) 24px 12px/300px 300px repeat;opacity:.11}
+/* ───── page unique (v5) ───── */
+.sous-titre{margin:40px 0 18px;font-size:clamp(20px,2.4vw,24px)}
+
+/* offres : lignes de prix */
+.carte .tarifs{list-style:none;margin-top:16px;border-top:1px solid var(--ligne)}
+.carte .tarifs li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0;padding:10px 0;
+  border-bottom:1px dashed var(--ligne);font-size:15px;color:var(--texte);break-inside:avoid}
+.carte .tarifs li::before{content:none}
+.carte .tarifs b{flex:0 0 auto;color:var(--indigo);font-weight:800;font-size:14.5px;white-space:nowrap}
+.carte.plein .tarifs{columns:2;column-gap:40px}
+.carte .inclus{margin-top:12px;font-size:14px}
+
+/* Socle Souverain */
+.socle-grille{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:22px}
+.socle-bloc{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:26px}
+.socle-bloc h3{color:#fff;margin-bottom:12px}
+.socle-bloc ul{list-style:none}
+.socle-bloc li{position:relative;padding-left:20px;margin-bottom:9px;font-size:15px;color:#E3E7FA}
+.socle-bloc li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--corail);transform:rotate(45deg)}
+.socle-bloc li b{color:#fff}
+.socle-bloc .petit,section.encre .socle-bloc .petit{font-size:14px;color:#C9CFF4;margin-top:12px}
+.prix-socle p{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.prix-socle p span{font-size:14px;color:#C9CFF4}
+.prix-socle p b{font-size:clamp(20px,2.3vw,24px);color:var(--corail);font-weight:900;letter-spacing:-.01em}
+.prix-socle p.petit{display:block;border-bottom:0}
+.prix-socle .btn{margin-top:16px}
+
+/* méthode : engagements */
+.engagements{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px 28px}
+.engagements li{border-top:2px solid var(--ligne);padding-top:14px}
+.engagements h4{font-size:16.5px;margin-bottom:6px}
+.engagements p{font-size:15px;color:var(--gris)}
+
+/* fondateur : portrait détouré, sans fond, ombre douce */
+.fondateur{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(30px,5vw,64px);align-items:center}
+.portrait{margin:0}
 .portrait picture{display:block}
 .portrait img{width:100%;height:auto;
-  filter:drop-shadow(0 20px 26px rgba(13,16,48,.40)) drop-shadow(0 3px 6px rgba(13,16,48,.26))}
-.portrait-badge{position:absolute;z-index:1;right:-26px;bottom:64px;max-width:215px;background:#fff;border:1px solid var(--ligne);
-  border-radius:16px;padding:14px 18px;box-shadow:var(--ombre-f);font-size:13.5px;line-height:1.35;color:var(--gris);font-weight:600}
-.portrait-badge b{display:block;font-size:30px;line-height:1;font-weight:900;color:var(--rouge);letter-spacing:-.02em;margin-bottom:4px}
-.certifs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:24px}
+  filter:drop-shadow(0 16px 20px rgba(23,26,69,.22)) drop-shadow(0 2px 4px rgba(23,26,69,.12));
+  -webkit-mask-image:linear-gradient(180deg,#000 76%,transparent 100%);mask-image:linear-gradient(180deg,#000 76%,transparent 100%)}
+.fondateur .lede{margin-top:14px}
+.parcours{list-style:none;margin-top:18px}
+.parcours li{position:relative;padding-left:20px;margin-bottom:8px;font-size:15.5px;color:var(--gris)}
+.parcours li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--rouge);transform:rotate(45deg)}
+.parcours b{color:var(--encre)}
+.certifs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:18px}
 .certifs li{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--encre);
   background:#fff;border:1px solid var(--ligne);border-radius:999px;padding:6px 13px 6px 10px}
 .certifs svg{width:16px;height:16px;color:var(--ok);flex:0 0 auto}
-.fondateur-texte .actions{margin-top:26px}
+.realisations{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 40px}
+.realisations li{position:relative;padding-left:20px;font-size:15px;color:var(--gris)}
+.realisations li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--indigo);transform:rotate(45deg)}
+.realisations b{color:var(--encre)}
+.technos{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.technos li{font-size:13px;font-weight:600;color:var(--gris);background:#fff;border:1px solid var(--ligne);border-radius:8px;padding:4px 10px}
+
+/* questions fréquentes (sans script) */
+.faq{max-width:880px;border-top:1px solid var(--ligne)}
+.faq details{border-bottom:1px solid var(--ligne)}
+.faq summary{list-style:none;cursor:pointer;position:relative;padding:16px 40px 16px 0;font-weight:700;font-size:17px;color:var(--encre)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:8px;top:11px;font-size:24px;font-weight:400;color:var(--indigo)}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--indigo)}
+.faq details p{padding:0 40px 18px 0;color:var(--gris);font-size:15.5px}
+
+/* contact */
+.contact-grille{align-items:start}
+.contact-grille .coord{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:6px 22px;box-shadow:var(--ombre)}
+.contact-grille .note .actions{margin-top:16px}
+
 @media (max-width:960px){
-  .fondateur{grid-template-columns:1fr;gap:34px}
-  .fondateur .portrait{order:0;justify-self:center;width:100%;max-width:360px}
-  .fondateur-texte{padding-bottom:0}
+  .socle-grille{grid-template-columns:1fr}
+  .engagements{grid-template-columns:1fr 1fr}
+  .fondateur{grid-template-columns:1fr;gap:20px}
+  .fondateur .portrait{max-width:300px;justify-self:center;width:100%}
+  .realisations{grid-template-columns:1fr}
 }
 @media (max-width:760px){
-  .portrait-badge{right:-4px;bottom:34px;max-width:180px;padding:11px 14px;font-size:12.5px}
-  .portrait-badge b{font-size:24px}
+  .carte.plein .tarifs{columns:1}
+  .engagements{grid-template-columns:1fr}
+  .carte .tarifs li{flex-direction:column;gap:2px}
+  .sous-titre{margin-top:30px}
 }
 
 /* ───── responsive ───── */
@@ -403,7 +454,9 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
 }
 @media (max-width:760px){
   body{font-size:16.5px}
-  section{padding:58px 0}
+  section{padding:42px 0}
+  section.serre{padding:34px 0}
+  .entete{margin-bottom:24px}
   .wrap{padding:0 18px}
   .g2,.g3,.g4{grid-template-columns:1fr}
   .duo{grid-template-columns:1fr}
@@ -411,8 +464,8 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
   .cta{padding:32px 24px;flex-direction:column;align-items:flex-start}
   .cta .d{text-align:left}
   footer.bas .cols{grid-template-columns:1fr;gap:28px}
-  .hero{padding:52px 0 54px}
-  .hero.court{padding:40px 0 40px}
+  .hero{padding:40px 0 42px}
+  .hero.court{padding:30px 0 28px}
   .confiance .wrap{grid-template-columns:1fr 1fr;gap:18px}
   .confiance .c{border-left:0;padding-left:0}
   .wa{right:14px;bottom:14px;padding:12px 16px 12px 14px;font-size:14.5px}
@@ -430,7 +483,7 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
   .btn:hover,.carte:hover{transform:none}
 }
 @media print{
-  .hero::before,section.pale::before,section.encre::before,.cta::before,.portrait::before,.portrait::after{display:none}
+  .hero::before,section.pale::before,section.encre::before,.cta::before{display:none}
   header.top,.wa,.burger,.quiz .nav,.quiz .cta-q,footer.bas{display:none}
   body{font-size:11pt}
   .hero,section.encre,.cta{background:#fff!important;color:#000!important}

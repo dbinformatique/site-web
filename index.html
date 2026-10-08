@@ -24,6 +24,7 @@
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/assets/style.css">
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/contact.js" defer></script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -57,14 +58,14 @@
   <div class="wrap bar">
     <a class="logo" href="/" aria-label="D&amp;B Informatique — accueil"><img src="/assets/logo.svg" alt="D&amp;B Informatique" width="133" height="38"></a>
     <nav class="menu" id="menu" aria-label="Navigation principale">
-      <a href="/offres/">Offres</a><a href="/socle-souverain/">Socle Souverain</a><a href="/methode/">Méthode</a><a href="/fondateur/">Le fondateur</a><a href="/contact/">Contact</a>
+      <a href="/#offres">Offres</a><a href="/#socle">Socle Souverain</a><a href="/#methode">Méthode</a><a href="/#fondateur">Le fondateur</a><a href="/#contact">Contact</a>
       <span class="menu-cta"><a class="btn fant" href="/diagnostic/">Diagnostic gratuit</a><a class="btn primaire" href="tel:+237674496342"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>674 496 342</span></a></span>
     </nav>
     <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
 </header>
 <main id="contenu">
-<section class="hero">
+<section class="hero" id="haut">
   <div class="wrap hero-grille">
     <div>
       <div class="kicker">Pour les PME et institutions camerounaises</div>
@@ -72,12 +73,9 @@
       <p class="lede">Vous n'avez pas les moyens d'un directeur informatique à plein temps. Vous n'avez pas
          non plus les moyens d'une panne de trois jours. Nous avons construit l'offre qui se situe entre les deux.</p>
       <div class="actions">
-        <a class="btn primaire" href="/contact/">Demander le diagnostic offert <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn primaire" href="#contact">Demander le diagnostic offert <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn fant" href="/diagnostic/">Faire le test en 2 minutes</a>
       </div>
-      <ul class="rassure">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>45 minutes sur site</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Sans engagement</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Devis sous 72 heures</li>
-      </ul>
     </div>
     <div class="apercu" role="img" aria-label="Exemple de bilan remis après le diagnostic : sauvegarde 35 %, sécurité 45 %, réseau 75 %, support 60 %.">
       <div class="ap-tete"><div><div class="ap-titre">Bilan de votre informatique</div><div class="ap-sous">Exemple de restitution</div></div>
@@ -91,161 +89,340 @@
   </div>
 </section>
 
-<section class="confiance" aria-label="Ce qui nous distingue">
+<section class="confiance" aria-label="Nos engagements en chiffres">
   <div class="wrap">
-    <p class="intro"><b>Vous ne parlez pas à un commercial.</b>Douze années en direction des systèmes d'information, dans l'énergie, l'assurance et le numérique.</p>
-    <div class="c"><b>12 ans</b><span>en direction des systèmes d'information</span></div>
-    <div class="c"><b>ITIL V4</b><span>gestion des services informatiques</span></div>
-    <div class="c"><b>CEH v12</b><span>hacking éthique certifié</span></div>
-    <div class="c"><b>NSE 4</b><span>sécurité réseau Fortinet</span></div>
+    <p class="intro"><b>Vous ne parlez pas à un commercial.</b>Vous parlez à celui qui fera le travail, du diagnostic à l'exploitation.</p>
+    <div class="c"><b>45 min</b><span>de diagnostic offert, dans vos locaux</span></div>
+    <div class="c"><b>72 h</b><span>pour un devis détaillé ligne par ligne</span></div>
+    <div class="c"><b>dès 2 h</b><span>d'intervention garantie sous contrat</span></div>
+    <div class="c"><b>1 seul</b><span>interlocuteur pour tout votre informatique</span></div>
   </div>
 </section>
 
-<section class="encre">
-  <div class="wrap">
-    <div class="entete">
-      <div class="kicker clair">Notre offre signature</div>
-      <h2>Le Socle Souverain — vos données restent chez vous</h2>
-      <p class="lede">Un environnement de travail complet — fichiers, bureautique,
-         partage, visioconférence, gestion du parc — installé sur votre propre serveur, dans vos propres murs.
-         Il fait ce que fait Microsoft&nbsp;365, avec trois différences.</p>
-    </div>
-    <div class="grille g3">
-      <div class="carte"><h3>Il fonctionne sans internet</h3>
-        <p>Le serveur est dans votre bâtiment. Le jour où la connexion tombe, vos équipes continuent de
-           travailler sur leurs fichiers, en réseau local.</p></div>
-      <div class="carte"><h3>Son prix ne se réévalue pas</h3>
-        <p>Les abonnements Microsoft&nbsp;365 ont augmenté de 12 à 17 % au 1<sup>er</sup> juillet 2026 (offres Business Standard et Business Basic). Un serveur et des
-           licences perpétuelles ne se repricent pas.</p></div>
-      <div class="carte"><h3>Au terme, il vous appartient</h3>
-        <p>Serveur, licences perpétuelles, données et accès administrateur sont à votre nom. Un abonnement,
-           lui, ne laisse rien derrière lui.</p></div>
-    </div>
-    <div class="actions"><a class="btn primaire" href="/socle-souverain/">Découvrir le Socle Souverain</a>
-      <a class="btn clair-f" href="/contact/">Demander le diagnostic de souveraineté</a></div>
-  </div>
-</section>
-
-<section>
+<section class="serre" id="probleme">
   <div class="wrap">
     <div class="entete">
       <div class="kicker">Le problème</div>
       <h2>Trois prestataires, aucune vision d'ensemble</h2>
-      <p class="lede">La plupart des PME jonglent entre un installateur, un revendeur, un développeur et un
-         dépanneur. Chacun fait sa part ; personne ne répond de l'ensemble. Le jour où le serveur s'arrête,
-         tout le monde se renvoie la responsabilité — et c'est vous qui perdez trois jours d'activité.</p>
+      <p class="lede">Un installateur, un revendeur, un développeur, un dépanneur : chacun fait sa part, personne
+         ne répond de l'ensemble. Le jour où le serveur s'arrête, c'est vous qui perdez trois jours d'activité.</p>
     </div>
     <div class="grille g3">
       <div class="carte"><h3>La sauvegarde qui n'existait pas</h3>
-        <p>Elle était configurée. Personne ne l'avait testée depuis dix-huit mois. Le jour du sinistre,
-           le fichier de restauration était corrompu. C'est le scénario le plus fréquent que nous rencontrons.</p></div>
+        <p>Configurée, jamais testée depuis dix-huit mois. Le jour du sinistre, le fichier de restauration
+           était corrompu. C'est le scénario que nous rencontrons le plus souvent.</p></div>
       <div class="carte"><h3>Le budget qui explose sans prévenir</h3>
-        <p>Pas de contrat, pas de forfait : chaque incident devient une facture imprévue. En fin d'année,
-           le total dépasse largement ce qu'aurait coûté une maintenance régulière.</p></div>
+        <p>Pas de contrat, pas de forfait : chaque incident devient une facture imprévue, et le total de l'année
+           dépasse largement ce qu'aurait coûté une maintenance régulière.</p></div>
       <div class="carte"><h3>La décision technique prise par défaut</h3>
-        <p>Un fournisseur propose, personne ne sait évaluer. On achète ce qu'on vous montre plutôt que ce
-           dont vous avez besoin, et l'on s'en aperçoit deux ans plus tard.</p></div>
+        <p>Un fournisseur propose, personne ne sait évaluer. On achète ce qu'on vous montre plutôt que ce dont
+           vous avez besoin, et l'on s'en aperçoit deux ans plus tard.</p></div>
     </div>
   </div>
 </section>
 
-<section class="pale">
+<section class="pale" id="offres">
   <div class="wrap">
     <div class="entete">
-      <div class="kicker">Notre métier</div>
+      <div class="kicker">Nos offres</div>
       <h2>Cinq domaines, un seul interlocuteur</h2>
-      <p class="lede">Nous couvrons la chaîne complète, du diagnostic à l'exploitation quotidienne. Un seul
-         numéro à composer, une seule personne qui connaît votre installation.</p>
+      <p class="lede">Les prix indiqués sont des points de départ réels, hors taxes, en francs CFA. Le montant
+         définitif dépend de votre installation : il figure au devis, ligne par ligne, avant tout engagement.</p>
     </div>
     <div class="grille g2">
-      <div class="carte"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m9 13 2 2 4-4"/></svg></div><h3>Conseil &amp; gouvernance</h3>
-        <p>Nous établissons l'état réel de votre système d'information et la feuille de route pour le remettre d'aplomb.</p>
-        <ul><li>Audit SI 360° et schéma directeur</li><li>Audit de cybersécurité et test d'intrusion</li>
-          <li>Plan de continuité et de reprise d'activité</li><li>DSI à temps partagé, de 1 à 4 jours par mois</li></ul>
-        <div class="prix">à partir de 220 000 FCFA HT / mois</div></div>
-      <div class="carte"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></svg></div><h3>Infrastructure &amp; sûreté</h3>
-        <p>Nous construisons et sécurisons le socle technique dont dépend votre activité quotidienne.</p>
-        <ul><li>Câblage, Wi-Fi professionnel, baies et switches</li>
-          <li><strong>Interconnexion de vos sites</strong> : VPN hub &amp; spoke, agences reliées au siège</li>
-          <li>Pare-feu, accès distant, Active Directory</li>
-          <li>Serveurs, virtualisation, sauvegarde 3-2-1</li><li>Vidéosurveillance, contrôle d'accès, alarme</li></ul>
-        <div class="prix">à partir de 200 000 FCFA HT</div></div>
-      <div class="carte"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Maintenance au forfait — contrat Sérénité</h3>
-        <p>Un montant fixe chaque mois, et nous prenons en charge toute votre informatique. Vos dépenses imprévues deviennent un budget connu à l'avance.</p>
-        <ul><li>Visites préventives et support illimité</li><li>Délai d'intervention garanti par contrat</li>
-          <li>Supervision des sauvegardes et de la sécurité</li><li>Rapport d'activité mensuel</li></ul>
-        <div class="prix">à partir de 110 000 FCFA HT / mois</div></div>
-      <div class="carte"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m10 8-2 2 2 2M14 8l2 2-2 2"/></svg></div><h3>Solutions digitales et ERP</h3>
-        <p>Nous transformons vos processus en outils, et vos données en décisions.</p>
-        <ul><li>Sites vitrines, boutiques avec Mobile Money</li>
-          <li><strong>ERP adapté ou développé sur mesure</strong> : ventes, achats, stocks, comptabilité, paie</li>
-          <li>Applications métier web et mobile</li>
-          <li>Tableaux de bord décisionnels</li><li>Cas d'usage IA et formation des équipes</li></ul>
-        <div class="prix">à partir de 380 000 FCFA HT</div></div>
-      <div class="carte plein"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><h3>Infographie &amp; communication visuelle</h3>
-        <p>Votre image se juge avant votre travail. Nous concevons les supports qui la portent — et nous les
-           produisons chaque mois si vous le souhaitez.</p>
-        <ul><li>Logo, charte graphique et pack identité</li><li>Flyers, affiches, plaquettes, roll-up, cartes de visite</li>
-          <li>Bannières et visuels de réseaux sociaux</li><li>Habillage de véhicule et grand format</li>
-          <li>Abonnement : 4, 8 ou 16 visuels par mois</li></ul>
-        <div class="prix">à partir de 25 000 FCFA HT · abonnement dès 75 000 FCFA HT / mois</div></div>
+      <div class="carte offre"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m9 13 2 2 4-4"/></svg></div><h3>Conseil &amp; expertise</h3>
+        <p>Savoir où vous en êtes avant d'acheter quoi que ce soit.</p>
+        <ul class="tarifs">
+          <li><span>Audit SI 360° et feuille de route chiffrée</span><b>dès 600 000</b></li>
+          <li><span>Audit de cybersécurité et test d'intrusion</span><b>dès 900 000</b></li>
+          <li><span>DSI à temps partagé, 1 à 4 jours par mois</span><b>dès 220 000 / mois</b></li>
+        </ul>
+        <p class="inclus">Plan de continuité et de reprise d'activité, sensibilisation des équipes : sur devis.</p></div>
+      <div class="carte offre"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></svg></div><h3>Infrastructure, réseau &amp; sûreté</h3>
+        <p>Installé, documenté, et remis avec les clés : mots de passe, schémas et procédures.</p>
+        <ul class="tarifs">
+          <li><span>Câblage, Wi-Fi professionnel, switches</span><b>dès 35 000 / point</b></li>
+          <li><span>Pare-feu, sauvegarde 3-2-1, Active Directory</span><b>dès 850 000</b></li>
+          <li><span>Interconnexion de vos sites par VPN</span><b>dès 2 400 000</b></li>
+          <li><span>Vidéosurveillance, contrôle d'accès, alarme</span><b>dès 330 000</b></li>
+        </ul>
+        <p class="inclus">Fourniture du matériel informatique sur devis.</p></div>
+      <div class="carte offre"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Maintenance au forfait — contrat Sérénité</h3>
+        <p>Un montant fixe chaque mois : assistance illimitée, visites préventives, dépannages, contrôle des
+           sauvegardes et rapport d'activité. Votre budget est connu à l'avance.</p>
+        <ul class="tarifs">
+          <li><span>Essentiel · jusqu'à 10 postes · intervention sous 8 h</span><b>110 000 / mois</b></li>
+          <li><span>Business · 11 à 25 postes · intervention sous 4 h</span><b>240 000 / mois</b></li>
+          <li><span>Corporate · 26 à 50 postes · intervention sous 2 h</span><b>420 000 / mois</b></li>
+        </ul></div>
+      <div class="carte offre"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m10 8-2 2 2 2M14 8l2 2-2 2"/></svg></div><h3>Solutions digitales, ERP, données &amp; IA</h3>
+        <p>Vos processus transformés en outils, vos données en décisions.</p>
+        <ul class="tarifs">
+          <li><span>Site vitrine, référencé et lisible sur téléphone</span><b>dès 380 000</b></li>
+          <li><span>Boutique en ligne avec paiement Mobile Money</span><b>dès 950 000</b></li>
+          <li><span>Application métier web et mobile</span><b>dès 1 800 000</b></li>
+          <li><span>ERP adapté (solution libre éprouvée) ou sur mesure</span><b>dès 6 000 000</b></li>
+          <li><span>Tableaux de bord décisionnels</span><b>dès 900 000</b></li>
+          <li><span>Intelligence artificielle, après audit d'opportunité</span><b>dès 500 000</b></li>
+        </ul></div>
+      <div class="carte offre plein"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><h3>Infographie &amp; communication visuelle</h3>
+        <p>Votre image se juge avant votre travail. Deux tours de retouche inclus ; textes, photos et impression en sus.</p>
+        <ul class="tarifs">
+          <li><span>Logo (3 pistes, fichiers vectoriels)</span><b>dès 150 000</b></li>
+          <li><span>Pack identité : logo, charte, papeterie</span><b>dès 250 000</b></li>
+          <li><span>Flyer, affiche, plaquette, roll-up</span><b>dès 35 000</b></li>
+          <li><span>Carte de visite, bannière de réseau social</span><b>dès 20 000</b></li>
+          <li><span>Abonnement : 4, 8 ou 16 visuels par mois</span><b>dès 45 000 / mois</b></li>
+          <li><span>Habillage de véhicule</span><b>dès 80 000</b></li>
+        </ul></div>
     </div>
-    <div class="actions"><a class="btn sombre" href="/offres/">Voir le détail des offres et les prix</a></div>
+
+    <h3 class="sous-titre">Pour démarrer : trois packs à prix fermes</h3>
+    <div class="grille g3">
+      <div class="carte"><div class="num">1</div><h3>Pack Démarrage</h3><p>La jeune entreprise qui s'équipe sur des bases saines.</p>
+        <ul><li>Mini-audit et plan d'équipement</li><li>Réseau et Wi-Fi jusqu'à 10 postes</li><li>Sauvegarde et antivirus centralisés</li><li>Un mois de maintenance offert</li></ul>
+        <div class="prix">dès 900 000 FCFA HT</div></div>
+      <div class="carte"><div class="num">2</div><h3>Pack Sécurité</h3><p>L'entreprise qui a compris le risque et veut le réduire vite.</p>
+        <ul><li>Audit de cybersécurité</li><li>Pare-feu et sauvegarde 3-2-1</li><li>Sensibilisation de toute l'équipe</li><li>Procédure de crise documentée</li></ul>
+        <div class="prix">dès 2 200 000 FCFA HT</div></div>
+      <div class="carte"><div class="num">3</div><h3>Pack Sûreté</h3><p>Le commerce, l'entrepôt ou la clinique.</p>
+        <ul><li>Vidéosurveillance 8 caméras</li><li>Contrôle d'accès sur 2 portes</li><li>Accès mobile, enregistrement 30 jours</li><li>Formation et maintenance 6 mois</li></ul>
+        <div class="prix">dès 1 400 000 FCFA HT</div></div>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="encre" id="socle">
   <div class="wrap">
-    <div class="entete centre"><div class="kicker">Comment nous travaillons</div>
-      <h2>Quatre étapes, aucune surprise</h2></div>
+    <div class="entete">
+      <div class="kicker clair">Notre offre signature</div>
+      <h2>Le Socle Souverain — vos données restent chez vous</h2>
+      <p class="lede">Un environnement de travail complet — fichiers, bureautique, partage, visioconférence,
+         gestion du parc — installé sur votre propre serveur, dans vos murs. Il fait ce que fait
+         Microsoft&nbsp;365, avec trois différences.</p>
+    </div>
+    <div class="grille g3">
+      <div class="carte"><h3>Il fonctionne sans internet</h3>
+        <p>Le serveur est dans votre bâtiment. Quand la connexion tombe, vos équipes continuent de travailler
+           sur leurs fichiers, en réseau local.</p></div>
+      <div class="carte"><h3>Son prix ne se réévalue pas</h3>
+        <p>Les abonnements Microsoft&nbsp;365 ont augmenté de 12 à 17 % au 1<sup>er</sup> juillet 2026 (Business Standard
+           et Business Basic). Un serveur et des licences perpétuelles ne se repricent pas.</p></div>
+      <div class="carte"><h3>Au terme, il vous appartient</h3>
+        <p>Serveur, licences, données et accès administrateur sont à votre nom. Un abonnement, lui, ne laisse
+           rien derrière lui.</p></div>
+    </div>
+    <div class="socle-grille">
+      <div class="socle-bloc">
+        <h3>Ce que nous installons</h3>
+        <ul>
+          <li><b>Fichiers et collaboration</b> — remplace OneDrive et SharePoint, accessible même sans internet.</li>
+          <li><b>Bureautique en ligne</b> — édition à plusieurs, aux formats Word, Excel et PowerPoint.</li>
+          <li><b>Microsoft Office en licence perpétuelle</b> — pour les postes qui en ont besoin, sans abonnement.</li>
+          <li><b>Agendas et visioconférence</b> — hébergés chez vous.</li>
+          <li><b>ParcInfo</b>, notre logiciel — inventaire du parc, demandes à délai garanti, contrats, licences
+              et vulnérabilités. Il se vend aussi seul, dès 35 000 FCFA HT par mois.</li>
+        </ul>
+        <p class="petit">Compris : sauvegarde chiffrée quotidienne avec copie hors site, accès distant sécurisé,
+           supervision, assistance et rapport mensuel. Migration en deux à trois mois, sans coupure.</p>
+      </div>
+      <div class="socle-bloc prix-socle">
+        <h3>Ce que cela coûte</h3>
+        <p><span>Mise en place, prix ferme</span><b>dès 2 400 000 FCFA HT</b></p>
+        <p><span>Exploitation, maintenance comprise</span><b>dès 145 000 FCFA HT / mois</b></p>
+        <p class="petit">Jusqu'à 10 postes ; formules à 25 et 50 postes. En dessous d'une vingtaine de postes, un
+           abonnement reste souvent moins cher, et nous vous le dirons. À 50 postes, l'économie atteint
+           2,8 millions de francs sur trois ans.</p>
+        <a class="btn primaire" href="#contact">Demander le diagnostic de souveraineté</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <div class="entete">
+      <div class="kicker">Notre méthode</div>
+      <h2>Quatre étapes, aucune surprise</h2>
+      <p class="lede">Sur ce marché, la plupart des déceptions viennent de ce qui n'avait pas été dit.
+         Nous avons donc tout mis par écrit.</p>
+    </div>
     <div class="etapes">
-      <div class="etape"><h3>Diagnostic</h3><p>45 minutes sur votre site, offertes et sans engagement. Nous écoutons et nous mesurons.</p></div>
-      <div class="etape"><h3>Proposition</h3><p>Un devis clair sous 72 heures, ligne par ligne, avec ce qui est inclus et ce qui ne l'est pas.</p></div>
-      <div class="etape"><h3>Mise en œuvre</h3><p>Un planning tenu, un interlocuteur unique, une réception signée à la fin.</p></div>
-      <div class="etape"><h3>Accompagnement</h3><p>Un rapport chaque mois, un point chaque trimestre, un test de restauration deux fois par an.</p></div>
+      <div class="etape"><h3>Diagnostic</h3><p>45 minutes chez vous, offertes. Installation, sauvegardes, risques :
+        vous repartez avec trois recommandations, même sans suite.</p></div>
+      <div class="etape"><h3>Proposition</h3><p>Un devis sous 72 heures, ligne par ligne, avec ce qui est inclus
+        <em>et</em> ce qui ne l'est pas. Valable 15 jours, sans option cachée.</p></div>
+      <div class="etape"><h3>Mise en œuvre</h3><p>Un planning tenu, un interlocuteur unique, et un procès-verbal de
+        recette signé : sans lui, le chantier n'est pas terminé.</p></div>
+      <div class="etape"><h3>Accompagnement</h3><p>Un rapport chaque mois, un point chaque trimestre, un test de
+        restauration réel deux fois par an.</p></div>
     </div>
+    <h3 class="sous-titre">Ce sur quoi vous pouvez nous tenir</h3>
+    <ul class="engagements">
+      <li><h4>Un engagement écrit</h4><p>Délai d'intervention, périmètre exact et garantie de douze mois sur la
+        main-d'œuvre figurent au contrat.</p></li>
+      <li><h4>Aucune surprise sur la facture</h4><p>Prix fermes, avenant écrit pour toute demande hors périmètre.
+        Rien n'est facturé sans accord préalable.</p></li>
+      <li><h4>Vos accès vous appartiennent</h4><p>Mots de passe, comptes administrateur, noms de domaine, codes
+        sources : tout est à votre nom.</p></li>
+      <li><h4>Une documentation systématique</h4><p>Schéma réseau, inventaire, procédures : un dossier à jour qui
+        permet à n'importe quel technicien de reprendre.</p></li>
+      <li><h4>Commencer petit</h4><p>Un audit, une sauvegarde remise d'aplomb ou un mois de maintenance suffisent
+        à juger. Aucun contrat au-delà de douze mois.</p></li>
+      <li><h4>Le droit de dire non</h4><p>Si votre besoin ne justifie pas la dépense, nous vous le disons. Un audit
+        qui conclut « ne changez rien » est un audit réussi.</p></li>
+    </ul>
   </div>
 </section>
 
-<section class="pale">
+<section class="pale" id="fondateur">
   <div class="wrap">
-    <div class="entete centre"><div class="kicker">Deux minutes chrono</div>
-      <h2>Votre informatique tiendrait-elle trois jours d'arrêt&nbsp;?</h2>
-      <p class="lede">Douze questions, un score, et trois priorités personnalisées. Aucune inscription,
-         aucune donnée envoyée : tout se calcule dans votre navigateur.</p>
-      <div class="just-c actions centre"><a class="btn primaire" href="/diagnostic/">Faire le diagnostic en ligne</a></div>
+    <div class="fondateur">
+      <figure class="portrait">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/fondateur-480.webp 480w, /assets/img/fondateur-960.webp 960w"
+                  sizes="(max-width: 960px) 320px, 380px">
+          <img src="/assets/img/fondateur-480.png" width="480" height="624" loading="lazy" decoding="async"
+               alt="Claude Donald Dilangue Mbome, fondateur de D&amp;B Informatique">
+        </picture>
+      </figure>
+      <div>
+        <div class="kicker">Le fondateur</div>
+        <h2>Douze ans passés de l'autre côté de la table.</h2>
+        <p class="lede">D&amp;B Informatique est dirigée par <strong>Claude Donald Dilangue Mbome</strong>. Avant de
+           conseiller des dirigeants, il a passé douze années à porter la responsabilité de systèmes d'information
+           en entreprise : rendre des comptes sur des pannes, défendre des budgets, refuser des devis.</p>
+        <ul class="parcours">
+          <li><b>Six ans dans l'assurance</b> — exploitation, réseau, sauvegardes, puis services numériques vendus aux assurés.</li>
+          <li><b>Quatre ans dans l'énergie</b> — référent SI d'un grand projet hydroélectrique : sécurité périmétrique,
+              haute disponibilité, plan de continuité.</li>
+          <li><b>Direction des systèmes d'information</b> — stratégie, cybersécurité, projets de digitalisation,
+              budget, équipes et prestataires.</li>
+        </ul>
+        <ul class="certifs" aria-label="Diplômes et certifications"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>CEH v12</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>ITIL V4</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Fortinet NSE4</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>MS-100 Microsoft 365</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Master SIGL</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>MIAGE</li></ul>
+        <p class="aide">Certifications vérifiables auprès des organismes qui les délivrent ; numéros communiqués sur demande.</p>
+      </div>
+    </div>
+
+    <h3 class="sous-titre">Des projets menés jusqu'à la mise en production</h3>
+    <ul class="realisations">
+      <li><b>Sécurité et réseau</b> — pare-feu Fortigate sur sites industriels, VPN et certificats, stratégies Active Directory.</li>
+      <li><b>Continuité</b> — sauvegarde, continuité et reprise d'activité sur des systèmes critiques à haute disponibilité.</li>
+      <li><b>Services numériques</b> — portail santé d'un assureur (5 000 utilisateurs actifs), souscription d'assurance par USSD.</li>
+      <li><b>Applications métier</b> — outil de gestion des plaintes d'un grand projet d'infrastructure, du cadrage à la production.</li>
+      <li><b>Données et intégration</b> — bases SQL Server multi-sites interconnectées, certificats sur plateformes ERP financières.</li>
+      <li><b>Collaboration souveraine</b> — Nextcloud pour l'archivage sécurisé : la base de notre Socle Souverain.</li>
+    </ul>
+    <ul class="technos" aria-label="Technologies exploitées en production">
+      <li>Fortinet</li><li>pfSense</li><li>Active Directory</li><li>Windows Server</li><li>VMware</li><li>Hyper-V</li>
+      <li>Proxmox</li><li>Microsoft Azure</li><li>Veeam</li><li>QNAP</li><li>Nextcloud</li><li>SQL Server</li>
+      <li>Asterisk</li><li>3CX</li><li>GLPI</li>
+    </ul>
+  </div>
+</section>
+
+<section class="serre" id="questions">
+  <div class="wrap">
+    <div class="entete"><div class="kicker">Questions fréquentes</div><h2>Ce qu'on nous demande avant de signer</h2></div>
+    <div class="faq">
+      <details><summary>Travaillez-vous en dehors de Yaoundé&nbsp;?</summary>
+        <p>Oui. Yaoundé et la région du Centre sont couverts sans frais de déplacement. Ailleurs au Cameroun,
+           le déplacement est chiffré séparément et annoncé au devis.</p></details>
+      <details><summary>Comment paie-t-on&nbsp;?</summary>
+        <p>Par virement bancaire ou en espèces contre reçu, avec une facture systématique. Sur les chantiers, un
+           acompte est demandé à la commande ; le solde n'est dû qu'après la recette signée.</p></details>
+      <details><summary>Nous avons déjà un prestataire. Faut-il en changer&nbsp;?</summary>
+        <p>Non. Nous intervenons souvent en second regard : audit, pilotage, ou reprise d'un seul volet. Il n'est
+           pas nécessaire de tout changer pour commencer à y voir clair.</p></details>
+      <details><summary>Et votre messagerie, la rapatriez-vous aussi&nbsp;?</summary>
+        <p>Non. Un serveur de courriel installé localement voit une partie de ses messages classés en indésirables.
+           Nous laissons votre messagerie chez un opérateur professionnel et concentrons la souveraineté sur vos
+           fichiers, vos données métier et votre parc.</p></details>
     </div>
   </div>
 </section>
 
-<section class="serre"><div class="wrap"><div class="cta">
-  <div>
-    <h2>Le diagnostic est offert.</h2>
-    <p>Quarante-cinq minutes dans vos locaux, sans engagement et sans jargon. Vous repartez avec
-       trois recommandations applicables immédiatement, que vous décidiez ou non de travailler avec nous.</p>
-    <div class="actions">
-      <a class="btn primaire" href="https://wa.me/237674496342?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20diagnostic%20offert." target="_blank" rel="noopener noreferrer">Réserver sur WhatsApp</a>
-      <a class="btn clair-f" href="/contact/">Écrire un message</a>
+<section class="pale" id="contact">
+  <div class="wrap">
+    <div class="entete">
+      <div class="kicker">Contact</div>
+      <h2>Parlons-en. Le diagnostic est offert.</h2>
+      <p class="lede">Quarante-cinq minutes dans vos locaux, sans engagement et sans jargon. Nous vous rappelons sous
+         24 heures ouvrées pour fixer le rendez-vous ; vous recevez ensuite un compte rendu écrit avec trois
+         priorités, que vous travailliez avec nous ou non.</p>
+    </div>
+    <div class="grille g2 contact-grille">
+      <div><form class="f" id="fc" novalidate aria-describedby="err">
+          <div class="duo">
+            <div class="champ"><label for="nom">Votre nom<span aria-hidden="true"> *</span></label>
+              <input id="nom" name="nom" required autocomplete="name"></div>
+            <div class="champ"><label for="ese">Votre entreprise</label>
+              <input id="ese" name="ese" autocomplete="organization"></div>
+          </div>
+          <div class="duo">
+            <div class="champ"><label for="tel">Téléphone<span aria-hidden="true"> *</span></label>
+              <input id="tel" name="tel" type="tel" required autocomplete="tel" placeholder="6XX XX XX XX"></div>
+            <div class="champ"><label for="mail">Courriel</label>
+              <input id="mail" name="mail" type="email" autocomplete="email"></div>
+          </div>
+          <div class="champ"><label for="besoin">Votre besoin</label>
+            <select id="besoin" name="besoin">
+              <option>Diagnostic offert de 45 minutes</option>
+              <option>Audit SI ou audit de cybersécurité</option>
+              <option>Contrat de maintenance Sérénité</option>
+              <option>Réseau, Wi-Fi, serveur ou sauvegarde</option>
+              <option>Vidéosurveillance ou contrôle d'accès</option>
+              <option>Site web, boutique ou application</option>
+              <option>Tableaux de bord, données, IA</option>
+              <option>Infographie et communication visuelle</option>
+              <option>Achat de matériel informatique</option>
+              <option>Autre demande</option>
+            </select></div>
+          <div class="champ"><label for="msg">Décrivez votre situation en deux lignes</label>
+            <textarea id="msg" name="msg" placeholder="Combien de postes, ce qui ne va pas aujourd'hui, et sous quel délai."></textarea>
+            <p class="aide">Plus votre description est précise, plus notre première réponse sera utile.</p></div>
+          <div class="actions">
+            <button type="button" class="btn wa-btn" id="bwa">Envoyer sur WhatsApp</button>
+            <button type="button" class="btn fant" id="bml">Envoyer par courriel</button>
+          </div>
+          <p class="erreur aide" id="err" role="alert"></p>
+        </form></div>
+      <div>
+        <ul class="coord">
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>Téléphone et WhatsApp</b>
+            <span><a href="tel:+237674496342">+237 674 496 342</a> — appel ou message</span></div></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>Courriel</b>
+            <span><a href="mailto:contact@dbinformatique.cm">contact@dbinformatique.cm</a></span></div></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Zone d'intervention</b>
+            <span>Yaoundé et région du Centre sans frais de déplacement. Reste du Cameroun sur devis.</span></div></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Disponibilités</b>
+            <span>Sur rendez-vous, du lundi au samedi. Réponse sous 24 h ouvrées. Urgences sous contrat : selon le délai garanti à votre contrat.</span></div></li>
+        </ul>
+        <div class="note mt"><h3>Vous préférez commencer seul&nbsp;?</h3>
+          <p>Douze questions, deux minutes, un score et trois priorités. Rien n'est envoyé : tout se calcule dans
+             votre navigateur.</p>
+          <div class="actions"><a class="btn sombre" href="/diagnostic/">Faire le diagnostic en ligne</a></div></div>
+      </div>
     </div>
   </div>
-  <div class="d"><b>+237 674 496 342</b><span>Appel ou WhatsApp · réponse sous 24 h ouvrées</span></div>
-</div></div></section>
+</section>
 </main>
+
 <footer class="bas">
   <div class="wrap">
     <div class="cols">
       <div><img src="/assets/logo-blanc.svg" alt="D&amp;B Informatique" width="154" height="44">
         <p>Conseil, cybersécurité, infrastructure, maintenance au forfait, ERP, solutions digitales et communication visuelle pour les PME et les institutions camerounaises.</p></div>
       <div><h4>Le site</h4><ul>
-        <li><a href="/">Accueil</a></li><li><a href="/offres/">Offres et prix</a></li>
-        <li><a href="/socle-souverain/">Socle Souverain</a></li><li><a href="/methode/">Notre méthode</a></li>
-        <li><a href="/fondateur/">Le fondateur</a></li><li><a href="/diagnostic/">Diagnostic gratuit</a></li></ul></div>
+        <li><a href="/#offres">Offres et prix</a></li><li><a href="/#socle">Socle Souverain</a></li>
+        <li><a href="/#methode">Notre méthode</a></li><li><a href="/#fondateur">Le fondateur</a></li>
+        <li><a href="/#questions">Questions fréquentes</a></li><li><a href="/diagnostic/">Diagnostic en ligne</a></li></ul></div>
       <div><h4>Nous joindre</h4><ul>
         <li><a href="tel:+237674496342">+237 674 496 342</a></li><li><a href="https://wa.me/237674496342" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         <li><a href="mailto:contact@dbinformatique.cm">contact@dbinformatique.cm</a></li>
         <li>Yaoundé, Cameroun</li><li>Sur rendez-vous</li></ul></div>
       <div><h4>Informations</h4><ul>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/#contact">Contact</a></li>
         <li><a href="/mentions-legales/">Mentions légales et confidentialité</a></li>
         <li><a href="/mentions-legales/#securite">Signaler une faille de sécurité</a></li></ul></div>
     </div>
