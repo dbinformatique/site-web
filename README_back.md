@@ -1,7 +1,6 @@
 # Site web de D&B Informatique — https://dbinformatique.cm
 
-Dépôt **public** du site vitrine, publié par **Netlify** (réglages dans `netlify.toml` : publication telle quelle, en-têtes de sécurité).
-GitHub Pages reste actif en secours pendant la transition d'octobre 2026, puis sera désactivé.
+Dépôt **public** du site vitrine, publié par GitHub Pages.
 Tout ce qui est ici est visible par tous : **aucun document interne, aucun prix confidentiel, aucun mot de passe** ne doit y être ajouté.
 Les documents internes sont dans le dépôt privé `dbinformatique/dbinfo-documents`.
 
@@ -38,8 +37,4 @@ serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 - Mentions : D&B Informatique SARL — capital 1 000 000 FCFA — RCCM et NIU en cours d'attribution (à compléter dès réception, dans le pied de page et dans `mentions-legales/index.html`).
 
 ## Modifier le site
-Claude travaille sur une branche ; vous relisez et fusionnez la demande de fusion (pull request). Le site se met à jour tout seul une à deux minutes après la fusion.
-**Offre gratuite Netlify : 300 crédits par mois, et chaque publication de `main` en coûte 15.** Regrouper les modifications
-sur une branche (aperçu Netlify gratuit) et ne fusionner qu'une fois validé. Si les crédits sont épuisés, le site est suspendu
-jusqu'au mois suivant : surveiller la jauge « Usage » dans Netlify.
-La branche `main` est protégée contre la suppression et la réécriture d'historique.
+Claude travaille sur une branche ; vous relisez et fusionnez la demande de fusion (pull request). Le site se met à jour tout seul une à deux minutes après la fusion. La branche `main` est protégée contre la suppression et la réécriture d'historique.
