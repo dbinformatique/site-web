@@ -430,6 +430,15 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
   .sous-titre{margin-top:30px}
 }
 
+/* ───── section contact : code QR WhatsApp (ordinateur uniquement) ───── */
+.wa-qr{display:flex;gap:18px;align-items:center;margin-top:18px;padding:14px 18px 14px 14px;background:#fff;
+  border:1px solid var(--ligne);border-radius:16px}
+.wa-qr img{width:112px;height:112px;flex:0 0 auto}
+.wa-qr b{display:block;color:var(--encre);font-size:15px}
+.wa-qr span{display:block;margin-top:3px;font-size:14.5px;line-height:1.45;color:var(--gris)}
+#methode + #questions{border-top:1px solid var(--ligne)}
+@media (max-width:760px){.wa-qr{display:none}}
+
 /* ───── responsive ───── */
 @media (max-width:1120px){
   .burger{display:flex}

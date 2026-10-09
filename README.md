@@ -1,30 +1,32 @@
 # Site web de D&B Informatique — https://dbinformatique.cm
 
 Dépôt **public** du site vitrine, publié par **Netlify** (réglages dans `netlify.toml` : publication telle quelle, en-têtes de sécurité).
-GitHub Pages reste actif en secours pendant la transition d'octobre 2026, puis sera désactivé.
+GitHub Pages est désactivé depuis octobre 2026 : ne pas le réactiver, le domaine pointe vers Netlify.
 Tout ce qui est ici est visible par tous : **aucun document interne, aucun prix confidentiel, aucun mot de passe** ne doit y être ajouté.
 Les documents internes sont dans le dépôt privé `dbinformatique/dbinfo-documents`.
 
 ## Pages
 | Adresse | Fichier |
 |---|---|
-| `/` | `index.html` — **page unique** : offres et prix (HT), Socle Souverain, méthode, fondateur, questions, contact |
+| `/` | `index.html` — **page unique** : offres et prix (HT), Socle Souverain, méthode, questions, contact |
 | `/diagnostic/` | `diagnostic/index.html` — diagnostic en ligne en 12 questions |
 | `/mentions-legales/` | `mentions-legales/index.html` — mentions, confidentialité, signalement de failles |
 | (toute adresse inconnue) | `404.html` |
 
-Sections de la page unique : `#offres`, `#socle`, `#methode`, `#fondateur`, `#questions`, `#contact`.
+Sections de la page unique : `#offres`, `#socle`, `#methode`, `#questions`, `#contact`.
+**La section « Le fondateur » est masquée depuis le 9 octobre 2026** (à réafficher plus tard) : son code et le portrait sont conservés dans le dépôt privé (`dbinfo-documents/03_Supports_Commerciaux/Site_Web/fondateur_masque/`), pas ici. Les anciennes adresses `/fondateur/` et `/parcours.html` renvoient vers l'accueil.
 Les anciennes adresses (`/offres/`, `/socle-souverain/`, `/methode/`, `/fondateur/`, `/contact/` et les `.html`) sont de simples
-redirections vers la section correspondante : ne pas les supprimer tant que des liens anciens peuvent circuler.
+redirections vers la section correspondante (ou vers l'accueil) : ne pas les supprimer tant que des liens anciens peuvent circuler.
 Tous les liens et ressources sont absolus depuis la racine (`/assets/…`, `/#offres`) : pour un aperçu local, lancer un petit
 serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 
 - `assets/style.css` : toute la mise en forme (couleurs dans le bloc `:root`).
 - `assets/motif-circuit.svg`, `assets/motif-circuit-clair.svg` : motif de fond « circuit imprimé » (tuile raccordable).
-- `assets/img/` : portrait du fondateur (WebP 480/960 px, repli PNG), détouré, sans données EXIF.
+- `assets/img/qr-whatsapp.svg` : code QR de la section contact (ouvre WhatsApp avec « j'ai vu votre site »), affiché sur ordinateur seulement.
 - `assets/js/` : `site.js` (menu), `contact.js` (formulaire), `diagnostic.js` (questionnaire).
 - `.well-known/security.txt` : contact pour signaler une faille (à renouveler avant le 1er octobre 2027).
-- `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml` : fichiers techniques — ne pas supprimer.
+- `netlify.toml`, `.nojekyll`, `robots.txt`, `sitemap.xml` : fichiers techniques — ne pas supprimer. (`CNAME` a été retiré le 9 octobre 2026 : il ne servait qu'à GitHub Pages.)
+- `assets/apercu.png` : image affichée quand le lien du site est partagé (WhatsApp, Facebook, LinkedIn). Après l'avoir changée, incrémenter `?v=` dans les balises `og:image`.
 
 ## Règles de sécurité du site
 1. **Aucun script ni style écrit directement dans les pages** (pas de `<script>…</script>`, pas de `style="…"`, pas de `onclick=`). Chaque page déclare une politique de sécurité du contenu (CSP) qui les bloque : tout passe par `assets/`.
