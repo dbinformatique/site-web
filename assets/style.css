@@ -436,8 +436,27 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
 .wa-qr img{width:112px;height:112px;flex:0 0 auto}
 .wa-qr b{display:block;color:var(--encre);font-size:15px}
 .wa-qr span{display:block;margin-top:3px;font-size:14.5px;line-height:1.45;color:var(--gris)}
-#methode + #questions{border-top:1px solid var(--ligne)}
 @media (max-width:760px){.wa-qr{display:none}}
+
+/* ───── section « Nos garanties » ───── */
+.garanties{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(32px,5vw,72px);align-items:start}
+.garanties-intro h2{max-width:19ch}
+.garanties-liste{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.garanties-liste li{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:22px 22px 20px;box-shadow:var(--ombre)}
+.garanties-liste .ic{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;
+  background:var(--pale);color:var(--indigo);margin-bottom:14px}
+.garanties-liste .ic svg{width:21px;height:21px}
+.garanties-liste h3{font-size:16.5px;margin-bottom:6px}
+.garanties-liste p{font-size:15px;color:var(--gris)}
+@media (max-width:960px){.garanties{grid-template-columns:1fr;gap:30px}}
+@media (max-width:560px){.garanties-liste{grid-template-columns:1fr;gap:14px}}
+
+/* ───── v8 : listes de prestations sans prix ───── */
+.carte.plein ul{columns:2;column-gap:40px}
+.carte.plein li{break-inside:avoid}
+.note-packs{margin-top:18px;font-size:14.5px;color:var(--gris);text-align:center}
+.socle-bloc .btn{margin-top:16px}
+@media (max-width:760px){.carte.plein ul{columns:1}}
 
 /* ───── responsive ───── */
 @media (max-width:1120px){

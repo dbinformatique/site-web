@@ -1,4 +1,4 @@
-/* D&B Informatique — diagnostic en 12 questions.
+/* D&B Informatique — évaluation en 12 questions.
    Tout est calculé dans le navigateur ; rien n'est transmis sans action de l'utilisateur.
    Construction du DOM sans innerHTML : aucune saisie n'est interprétée comme du HTML. */
 (function () {
@@ -42,7 +42,7 @@ const Q = [
     r: [["Rien de particulier", 0], ["On coupe sa messagerie", 1],
         ["On coupe la plupart de ses accès", 2], ["Procédure écrite, tous accès révoqués", 3]] },
   { q: "Savez-vous ce que votre informatique vous a coûté l'an dernier, tout compris ?",
-    why: "Dépannages, remplacements en urgence, heures perdues, licences oubliées. Presque personne ne le sait.",
+    why: "Dépannages, remplacements, licences, temps perdu : c'est la base de toute décision budgétaire.",
     r: [["Aucune idée", 0], ["Une vague estimation", 1],
         ["Approximativement", 2], ["Précisément, c'est budgété", 3]] },
   { q: "Vos collaborateurs ont-ils été formés à reconnaître une tentative d'arnaque par courriel ?",
@@ -50,7 +50,7 @@ const Q = [
     r: [["Jamais", 0], ["On en a parlé une fois", 1],
         ["Une sensibilisation a eu lieu", 2], ["Sensibilisation régulière et testée", 3]] },
   { q: "Existe-t-il un plan écrit décrivant quoi faire en cas de sinistre majeur ?",
-    why: "Le jour où le serveur brûle, personne n'improvise correctement.",
+    why: "Face à un sinistre, une procédure écrite et testée fait gagner un temps décisif.",
     r: [["Non", 0], ["C'est dans nos têtes", 1],
         ["Quelques notes existent", 2], ["Un plan écrit, testé au moins une fois", 3]] }
 ];
@@ -62,12 +62,12 @@ const AXES = [
   { nom: 'Pilotage et culture', q: [9, 10] }
 ];
 const CONSEILS = {
-  0: ["Testez une restauration de sauvegarde cette semaine", "Une sauvegarde jamais testée est une sauvegarde imaginaire. Prenez un fichier au hasard, tentez de le restaurer, chronométrez. Ce test ne coûte rien et vous dira en une heure si vous êtes réellement protégé."],
-  1: ["Emportez une copie hors des locaux", "Un incendie, un dégât des eaux ou un vol emporte l'original et la copie s'ils sont dans la même pièce. Une copie chiffrée hors site est la mesure la plus rentable qui existe."],
-  2: ["Mettez fin au mot de passe partagé", "C'est gratuit et cela se fait en une matinée. Un compte par personne, et vous saurez enfin qui a fait quoi."],
-  3: ["Écrivez la procédure de départ d'un collaborateur", "Dix lignes suffisent : messagerie, poste, serveur, application métier, téléphone, badge. Elle vous évitera un jour un vrai problème."],
-  4: ["Calculez votre coût informatique réel de l'an dernier", "Additionnez dépannages, remplacements, licences et heures perdues. Le chiffre surprend toujours — et il est presque toujours supérieur au coût d'un contrat de maintenance."],
-  5: ["Formez vos équipes à repérer une arnaque par courriel", "Une demi-journée de sensibilisation réduit davantage votre risque que la plupart des achats de matériel."]
+  0: ["Testez une restauration de sauvegarde", "Choisissez un fichier, restaurez-le depuis la sauvegarde et notez le temps nécessaire. Ce test simple indique si vos données sont réellement récupérables."],
+  1: ["Conservez une copie hors de vos locaux", "Un incendie, un dégât des eaux ou un vol touchent l'original et la copie s'ils sont au même endroit. Une copie chiffrée, conservée ailleurs, couvre ce risque."],
+  2: ["Attribuez un compte personnel à chaque collaborateur", "Un compte et un mot de passe par personne permettent de savoir qui accède à quoi, et de retirer un accès sans perturber les autres."],
+  3: ["Formalisez la procédure de départ d'un collaborateur", "Une liste courte suffit : messagerie, poste, serveur, application métier, téléphone, badge. Elle garantit qu'aucun accès ne reste ouvert."],
+  4: ["Faites le point sur vos dépenses informatiques", "Dépannages, remplacements, licences, temps perdu : un relevé sur douze mois donne une base objective pour fixer les priorités."],
+  5: ["Sensibilisez vos équipes aux courriels frauduleux", "Une demi-journée de sensibilisation, avec des exemples concrets, réduit sensiblement le risque d'intrusion."]
 };
 
 const zone = document.getElementById('zone');
@@ -95,7 +95,7 @@ function h(tag, attrs) {
 }
 let premierAffichage = true;
 function afficher(...noeuds) {
-  zone.replaceChildren(...noeuds);
+  zone.replaceChildren(...noeuds.flat().filter(n => n !== null && n !== undefined));
   if (premierAffichage) { premierAffichage = false; return; }
   const t = document.getElementById('diag-titre');
   if (t) t.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
@@ -130,10 +130,10 @@ function coordonnees() {
   afficher(prog(100),
     h('div', { class: 'num-q' }, 'Dernière étape'),
     h('h2', { class: 'q' }, 'Votre résultat est prêt'),
-    h('p', { class: 'why' }, "Indiquez votre nom et celui de votre entreprise pour personnaliser le résultat. Nous n'envoyons rien automatiquement : c'est vous qui décidez de nous transmettre le résultat, ou non."),
+    h('p', { class: 'why' }, "Indiquez votre nom et celui de votre entreprise pour personnaliser le résultat. Rien n'est envoyé automatiquement : vous décidez de nous le transmettre, ou non."),
     champ('n', 'Votre nom', { autocomplete: 'name', placeholder: 'Prénom et nom' }),
     champ('e', 'Votre entreprise', { autocomplete: 'organization', placeholder: 'Raison sociale' }),
-    h('div', { class: 'nav' }, h('button', { type: 'button', class: 'btn primaire', onclick: resultat }, 'Afficher mon diagnostic')),
+    h('div', { class: 'nav' }, h('button', { type: 'button', class: 'btn primaire', onclick: resultat }, 'Afficher le résultat')),
     h('p', { class: 'mini' }, 'Aucune donnée ne quitte votre appareil sans votre action.'));
 }
 
@@ -144,13 +144,13 @@ function resultat() {
   const pc = Math.round(pts / (Q.length * 3) * 100);
   let niv, cl, txt;
   if (pc < 35) { niv = 'Exposition critique'; cl = 'rg';
-    txt = "Votre entreprise est aujourd'hui vulnérable sur plusieurs points simultanés. Un incident banal — un disque qui lâche, un courriel piégé ouvert par un collaborateur — peut suffire à interrompre votre activité plusieurs jours. La bonne nouvelle : les trois premières mesures ci-dessous coûtent peu et changent presque tout."; }
+    txt = "Plusieurs points essentiels ne sont pas couverts aujourd'hui. Un incident courant — un disque défaillant, un courriel piégé — pourrait interrompre votre activité plusieurs jours. Les premières mesures ci-dessous sont simples à mettre en place et réduisent nettement l'exposition."; }
   else if (pc < 60) { niv = 'Exposition élevée'; cl = 'am';
-    txt = "Les bases sont partiellement là, mais des zones entières restent découvertes. C'est la situation la plus fréquente, et la plus trompeuse : tout fonctionne jusqu'au jour où cela ne fonctionne plus. Traitez d'abord les points rouges ci-dessous."; }
+    txt = "Les bases sont partiellement en place, mais certains domaines restent découverts. C'est la situation la plus courante. Commencez par les points signalés ci-dessous."; }
   else if (pc < 80) { niv = 'Exposition modérée'; cl = 'in';
-    txt = "Votre informatique est correctement tenue. Il reste des angles morts, souvent sur la continuité et la formation des équipes, mais vous partez d'un bon niveau. L'enjeu pour vous n'est plus de rattraper un retard : c'est de structurer et de documenter."; }
+    txt = "Votre informatique est correctement tenue. Il reste quelques angles morts, souvent sur la continuité et la sensibilisation des équipes. L'enjeu est désormais de structurer et de documenter."; }
   else { niv = 'Bonne maîtrise'; cl = 'vt';
-    txt = "Votre système d'information est bien tenu, au-dessus de ce que nous observons habituellement. Votre sujet n'est plus le risque de base : c'est l'optimisation, la gouvernance et l'exploitation de vos données."; }
+    txt = "Votre système d'information est bien tenu. Les sujets suivants relèvent de l'optimisation : gouvernance, documentation et exploitation des données."; }
 
   const axes = AXES.map(a => {
     const p = a.q.reduce((s, j) => s + Q[j].r[rep[j]][1], 0);
@@ -160,9 +160,9 @@ function resultat() {
   const prio = [];
   [[1, 0], [2, 1], [6, 2], [8, 3], [9, 4], [10, 5]].forEach(([q, c]) => { if (faibles.includes(q)) prio.push(CONSEILS[c]); });
   if (!prio.length) prio.push(['Passez du curatif au préventif',
-    'Vos fondamentaux sont solides. L’étape suivante consiste à formaliser : plan de continuité écrit, tableau de bord des coûts, et revue trimestrielle de votre système d’information.']);
+    'Les fondamentaux sont en place. L’étape suivante consiste à formaliser : plan de continuité écrit, suivi des coûts et revue trimestrielle de votre système d’information.']);
 
-  const msg = 'Bonjour, je viens de faire le diagnostic en 12 questions sur votre site.\n' +
+  const msg = 'Bonjour, je viens de faire l’évaluation en 12 questions sur votre site.\n' +
     'Entreprise : ' + (ent || '(à préciser)') + '\nNom : ' + (nom || '(à préciser)') + '\n' +
     'Score obtenu : ' + pc + ' % — ' + niv + '\nJ’aimerais en discuter.';
   const coul = p => p < 40 ? 'rg' : p < 70 ? 'am' : 'vt';
@@ -171,7 +171,7 @@ function resultat() {
     h('div', { class: 'score' },
       h('div', { class: 'big niv-' + cl }, String(pc), h('span', { class: 'sur' }, ' %')),
       h('div', { class: 'lab niv-' + cl }, niv),
-      ent ? h('p', { class: 'mini' }, 'Diagnostic établi pour ' + ent) : null),
+      ent ? h('p', { class: 'mini' }, 'Évaluation réalisée pour ' + ent) : null),
     h('div', { class: 'jauge' }, h('i', { class: 'fd-' + cl, width: pc + '%' })),
     h('div', { class: 'echelle', 'aria-hidden': 'true' }, h('span', null, 'Critique'), h('span', null, 'Élevée'), h('span', null, 'Modérée'), h('span', null, 'Maîtrisée')),
     h('p', null, txt),
@@ -179,19 +179,19 @@ function resultat() {
     axes.map(a => h('div', { class: 'axe' },
       h('div', { class: 'l' }, h('b', null, a.nom), h('span', { class: 'niv-' + coul(a.pc) }, a.pc + ' %')),
       h('div', { class: 'jauge fine' }, h('i', { class: 'fd-' + coul(a.pc), width: a.pc + '%' })))),
-    h('h3', { class: 'sous' }, 'Ce que nous vous recommandons de faire en premier'),
+    h('h3', { class: 'sous' }, 'Les premières mesures recommandées'),
     prio.slice(0, 3).map((c, k) => h('div', { class: 'bloc ' + (k === 0 ? 'red' : k === 1 ? 'warn' : 'ok') },
       h('b', null, (k + 1) + '. ' + c[0]), c[1])),
-    h('p', { class: 'mini g' }, 'Ces mesures sont applicables par vos propres moyens, sans nous. Nous vous les donnons parce qu’un diagnostic honnête vaut mieux qu’un devis.'),
+    h('p', { class: 'mini g' }, 'Ces mesures peuvent être appliquées par vos propres moyens. Nous préférons vous les indiquer franchement.'),
     h('div', { class: 'cta-q' },
-      h('h2', null, 'Vous voulez le ', h('em', null, 'diagnostic complet ?')),
-      h('p', null, 'Quarante-cinq minutes dans vos locaux, offertes et sans engagement. Nous regardons votre installation réelle, et vous repartez avec une feuille de route chiffrée.'),
+      h('h2', null, 'Aller plus loin : ', h('em', null, 'un diagnostic sur site')),
+      h('p', null, 'Quarante-cinq minutes dans vos locaux, offertes et sans engagement. Nous examinons votre installation réelle et vous remettons une feuille de route priorisée.'),
       h('span', { class: 'tel' }, '+237 674 496 342'),
       h('div', { class: 'actions' },
         h('a', { class: 'btn wa-btn', href: 'https://wa.me/' + TEL + '?text=' + encodeURIComponent(msg), target: '_blank', rel: 'noopener noreferrer' }, 'Envoyer mon résultat sur WhatsApp'),
         h('a', { class: 'btn clair', href: 'tel:+' + TEL }, 'Appeler maintenant'))),
     h('div', { class: 'nav' },
-      h('button', { type: 'button', class: 'btn fant', onclick: () => window.print() }, 'Imprimer mon diagnostic'),
+      h('button', { type: 'button', class: 'btn fant', onclick: () => window.print() }, 'Imprimer le résultat'),
       h('button', { type: 'button', class: 'btn fant', onclick: () => { i = 0; rep.fill(null); question(); } }, 'Recommencer')));
 }
 

@@ -2,19 +2,19 @@
 
 Dépôt **public** du site vitrine, publié par **Netlify** (réglages dans `netlify.toml` : publication telle quelle, en-têtes de sécurité).
 GitHub Pages est désactivé depuis octobre 2026 : ne pas le réactiver, le domaine pointe vers Netlify.
-Tout ce qui est ici est visible par tous : **aucun document interne, aucun prix confidentiel, aucun mot de passe** ne doit y être ajouté.
+Tout ce qui est ici est visible par tous : **aucun document interne, aucun montant (décision du 10 octobre 2026 : prestations sur devis), aucun mot de passe** ne doit y être ajouté.
 Les documents internes sont dans le dépôt privé `dbinformatique/dbinfo-documents`.
 
 ## Pages
 | Adresse | Fichier |
 |---|---|
-| `/` | `index.html` — **page unique** : offres et prix (HT), Socle Souverain, méthode, questions, contact |
-| `/diagnostic/` | `diagnostic/index.html` — diagnostic en ligne en 12 questions |
+| `/` | `index.html` — **page unique** : domaines d'intervention (sans prix), Socle Souverain, méthode, garanties, questions, contact |
+| `/diagnostic/` | `diagnostic/index.html` — évaluation en ligne en 12 questions |
 | `/mentions-legales/` | `mentions-legales/index.html` — mentions, confidentialité, signalement de failles |
 | (toute adresse inconnue) | `404.html` |
 
-Sections de la page unique : `#offres`, `#socle`, `#methode`, `#questions`, `#contact`.
-**La section « Le fondateur » est masquée depuis le 9 octobre 2026** (à réafficher plus tard) : son code et le portrait sont conservés dans le dépôt privé (`dbinfo-documents/03_Supports_Commerciaux/Site_Web/fondateur_masque/`), pas ici. Les anciennes adresses `/fondateur/` et `/parcours.html` renvoient vers l'accueil.
+Sections de la page unique : `#offres`, `#socle`, `#methode`, `#garanties`, `#questions`, `#contact`.
+**La section « Le fondateur » est masquée depuis le 9 octobre 2026** (à réafficher plus tard) : son code et le portrait sont conservés dans le dépôt privé (`dbinfo-documents/03_Supports_Commerciaux/Site_Web/fondateur_masque/`), pas ici. Elle est remplacée par la section `#garanties` (expérience et certifications, sans nom ni photo) ; les anciennes adresses `/fondateur/` et `/parcours.html` y renvoient.
 Les anciennes adresses (`/offres/`, `/socle-souverain/`, `/methode/`, `/fondateur/`, `/contact/` et les `.html`) sont de simples
 redirections vers la section correspondante (ou vers l'accueil) : ne pas les supprimer tant que des liens anciens peuvent circuler.
 Tous les liens et ressources sont absolus depuis la racine (`/assets/…`, `/#offres`) : pour un aperçu local, lancer un petit
