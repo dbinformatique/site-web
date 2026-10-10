@@ -1,18 +1,30 @@
 /* D&B Informatique — formulaire de contact.
-   Rien n'est envoyé par le site : le message est préparé puis ouvert dans WhatsApp ou le logiciel de courriel. */
+   « Envoyer le message » : envoi direct par le service de formulaires de Netlify ; le message arrive dans
+   contact@dbinformatique.cm, sans ouvrir de logiciel de courriel.
+   « Envoyer sur WhatsApp » : ouvre WhatsApp avec le message préparé.
+   Les saisies ne sont jamais insérées comme du HTML. */
 (function () {
   'use strict';
-  var TEL = '237674496342', MAIL = 'contact@dbinformatique.cm';
-  var f = document.getElementById('fc'), err = document.getElementById('err');
+  var TEL = '237674496342';
+  var f = document.getElementById('fc'), err = document.getElementById('err'), ok = document.getElementById('ok');
   if (!f) return;
-  function g(id) { var e = document.getElementById(id); return e ? e.value.trim().slice(0, 1500) : ''; }
-  function texte() {
+  function g(id) { var e = document.getElementById(id); return e ? e.value.trim().slice(0, 3000) : ''; }
+  function valide() {
+    ok.hidden = true;
     if (!g('nom') || !g('tel')) {
       err.textContent = 'Merci d’indiquer au moins votre nom et votre numéro de téléphone.';
-      (g('nom') ? document.getElementById('tel') : document.getElementById('nom')).focus();
-      return null;
+      document.getElementById(g('nom') ? 'tel' : 'nom').focus();
+      return false;
+    }
+    if (g('mail') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g('mail'))) {
+      err.textContent = 'L’adresse électronique semble incomplète : vérifiez-la ou laissez le champ vide.';
+      document.getElementById('mail').focus();
+      return false;
     }
     err.textContent = '';
+    return true;
+  }
+  function texte() {
     var l = ['Bonjour D&B Informatique,', '', 'Nom : ' + g('nom')];
     if (g('ese')) l.push('Entreprise : ' + g('ese'));
     l.push('Téléphone : ' + g('tel'));
@@ -23,13 +35,23 @@
     return l.join('\n');
   }
   document.getElementById('bwa').addEventListener('click', function () {
-    var t = texte();
-    if (t) window.open('https://wa.me/' + TEL + '?text=' + encodeURIComponent(t), '_blank', 'noopener,noreferrer');
+    if (valide()) window.open('https://wa.me/' + TEL + '?text=' + encodeURIComponent(texte()), '_blank', 'noopener,noreferrer');
   });
-  document.getElementById('bml').addEventListener('click', function () {
-    var t = texte();
-    if (t) window.location.href = 'mailto:' + MAIL + '?subject=' +
-      encodeURIComponent('Demande depuis le site — ' + g('besoin')) + '&body=' + encodeURIComponent(t);
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!valide()) return;
+    var b = document.getElementById('bml'), libelle = b.textContent;
+    b.disabled = true; b.textContent = 'Envoi en cours…';
+    document.getElementById('sujet').value = ('Demande depuis le site — ' + g('besoin') + ' — ' + g('nom')).slice(0, 200);
+    var corps = new URLSearchParams(new FormData(f)).toString();
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: corps })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        f.reset(); ok.hidden = false; ok.focus();
+      })
+      .catch(function () {
+        err.textContent = 'Le message n’a pas pu être envoyé. Réessayez dans un instant, ou écrivez directement à contact@dbinformatique.cm.';
+      })
+      .then(function () { b.disabled = false; b.textContent = libelle; });
   });
-  f.addEventListener('submit', function (e) { e.preventDefault(); document.getElementById('bwa').click(); });
 })();

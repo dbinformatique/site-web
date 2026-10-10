@@ -458,6 +458,13 @@ footer.bas .fin a{color:#9AA3D8;text-decoration:underline}
 .socle-bloc .btn{margin-top:16px}
 @media (max-width:760px){.carte.plein ul{columns:1}}
 
+/* ───── v9 : formulaire envoyé par Netlify Forms ───── */
+.piege{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.envoye{margin-top:14px;padding:12px 14px;border-radius:12px;background:#E8F6EE;border:1px solid #B9E2CB;color:#1B4D33;font-size:14.5px;line-height:1.5}
+.envoye b{display:block}
+.envoye:focus{outline:none}
+.btn:disabled{opacity:.6;cursor:wait}
+
 /* ───── responsive ───── */
 @media (max-width:1120px){
   .burger{display:flex}

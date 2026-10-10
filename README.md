@@ -15,8 +15,7 @@ Les documents internes sont dans le dépôt privé `dbinformatique/dbinfo-docume
 
 Sections de la page unique : `#offres`, `#socle`, `#methode`, `#garanties`, `#questions`, `#contact`.
 **La section « Le fondateur » est masquée depuis le 9 octobre 2026** (à réafficher plus tard) : son code et le portrait sont conservés dans le dépôt privé (`dbinfo-documents/03_Supports_Commerciaux/Site_Web/fondateur_masque/`), pas ici. Elle est remplacée par la section `#garanties` (expérience et certifications, sans nom ni photo) ; les anciennes adresses `/fondateur/` et `/parcours.html` y renvoient.
-Les anciennes adresses (`/offres/`, `/socle-souverain/`, `/methode/`, `/fondateur/`, `/contact/` et les `.html`) sont de simples
-redirections vers la section correspondante (ou vers l'accueil) : ne pas les supprimer tant que des liens anciens peuvent circuler.
+Les anciennes adresses (`/offres/`, `/socle-souverain/`, `/methode/`, `/fondateur/`, `/contact/` et les `.html`) sont redirigées (301) par `netlify.toml` vers la section correspondante. **Ne jamais recréer de fichier `diagnostic.html` ou `mentions-legales.html`** à la racine : Netlify le servirait à la place du dossier du même nom et créerait une boucle de redirection (incident du 10 octobre 2026).
 Tous les liens et ressources sont absolus depuis la racine (`/assets/…`, `/#offres`) : pour un aperçu local, lancer un petit
 serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 
@@ -24,6 +23,7 @@ serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 - `assets/motif-circuit.svg`, `assets/motif-circuit-clair.svg` : motif de fond « circuit imprimé » (tuile raccordable).
 - `assets/img/qr-whatsapp.svg` : code QR de la section contact (ouvre WhatsApp avec « j'ai vu votre site »), affiché sur ordinateur seulement.
 - `assets/js/` : `site.js` (menu), `contact.js` (formulaire), `diagnostic.js` (questionnaire).
+- **Formulaire de contact** : envoyé par **Netlify Forms** (formulaire `contact`, champ piège `bot-field`). Réglages côté Netlify : Forms ▸ détection des formulaires activée ; notification par courriel vers contact@dbinformatique.cm. Les demandes reçues sont aussi visibles dans Netlify ▸ Forms.
 - `.well-known/security.txt` : contact pour signaler une faille (à renouveler avant le 1er octobre 2027).
 - `netlify.toml`, `.nojekyll`, `robots.txt`, `sitemap.xml` : fichiers techniques — ne pas supprimer. (`CNAME` a été retiré le 9 octobre 2026 : il ne servait qu'à GitHub Pages.)
 - `assets/apercu.png` : image affichée quand le lien du site est partagé (WhatsApp, Facebook, LinkedIn). Après l'avoir changée, incrémenter `?v=` dans les balises `og:image`.

@@ -26,3 +26,67 @@
   to = "/404.html"
   status = 404
   force = true
+
+# Anciennes adresses (avant la page unique) : redirections permanentes.
+# Ne pas recréer de fichier « diagnostic.html » ou « mentions-legales.html » : Netlify le servirait à la place
+# du dossier du même nom et créerait une boucle de redirection.
+[[redirects]]
+  from = "/offres"
+  to = "/#offres"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/offres.html"
+  to = "/#offres"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/methode"
+  to = "/#methode"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/methode.html"
+  to = "/#methode"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/contact"
+  to = "/#contact"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/contact.html"
+  to = "/#contact"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/socle-souverain"
+  to = "/#socle"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/souverain.html"
+  to = "/#socle"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/fondateur"
+  to = "/#garanties"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/parcours.html"
+  to = "/#garanties"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/diagnostic.html"
+  to = "/diagnostic/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/mentions-legales.html"
+  to = "/mentions-legales/"
+  status = 301
+  force = true

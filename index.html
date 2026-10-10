@@ -53,7 +53,7 @@
     <a class="logo" href="/" aria-label="D&amp;B Informatique — accueil"><img src="/assets/logo.svg" alt="D&amp;B Informatique" width="133" height="38"></a>
     <nav class="menu" id="menu" aria-label="Navigation principale">
       <a href="/#offres">Offres</a><a href="/#socle">Socle Souverain</a><a href="/#methode">Méthode</a><a href="/#garanties">Garanties</a><a href="/#contact">Contact</a>
-      <span class="menu-cta"><a class="btn fant" href="/diagnostic/">Évaluation en ligne</a><a class="btn primaire" href="tel:+237674496342"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>674 496 342</span></a></span>
+      <span class="menu-cta"><a class="btn fant" href="/diagnostic/">Évaluation en ligne</a></span>
     </nav>
     <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
@@ -297,18 +297,21 @@
          priorités.</p>
     </div>
     <div class="grille g2 contact-grille">
-      <div><form class="f" id="fc" novalidate aria-describedby="err">
+      <div><form class="f" id="fc" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate aria-describedby="err">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="subject" id="sujet" data-remove-prefix value="Demande depuis le site dbinformatique.cm">
+          <p class="piege" aria-hidden="true"><label>Ne pas remplir ce champ <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="duo">
             <div class="champ"><label for="nom">Votre nom<span aria-hidden="true"> *</span></label>
-              <input id="nom" name="nom" required autocomplete="name"></div>
+              <input id="nom" name="nom" required autocomplete="name" maxlength="120"></div>
             <div class="champ"><label for="ese">Votre entreprise</label>
-              <input id="ese" name="ese" autocomplete="organization"></div>
+              <input id="ese" name="entreprise" autocomplete="organization" maxlength="120"></div>
           </div>
           <div class="duo">
             <div class="champ"><label for="tel">Téléphone<span aria-hidden="true"> *</span></label>
-              <input id="tel" name="tel" type="tel" required autocomplete="tel" placeholder="6XX XX XX XX"></div>
+              <input id="tel" name="telephone" type="tel" required autocomplete="tel" placeholder="6XX XX XX XX" maxlength="40"></div>
             <div class="champ"><label for="mail">Courriel</label>
-              <input id="mail" name="mail" type="email" autocomplete="email"></div>
+              <input id="mail" name="email" type="email" autocomplete="email" maxlength="160"></div>
           </div>
           <div class="champ"><label for="besoin">Votre besoin</label>
             <select id="besoin" name="besoin">
@@ -324,13 +327,15 @@
               <option>Autre demande</option>
             </select></div>
           <div class="champ"><label for="msg">Décrivez votre situation en quelques lignes</label>
-            <textarea id="msg" name="msg" placeholder="Nombre de postes, difficulté rencontrée, délai souhaité."></textarea>
+            <textarea id="msg" name="message" maxlength="3000" placeholder="Nombre de postes, difficulté rencontrée, délai souhaité."></textarea>
             <p class="aide">Ces éléments nous permettent de préparer le premier échange.</p></div>
           <div class="actions">
             <button type="button" class="btn wa-btn" id="bwa">Envoyer sur WhatsApp</button>
-            <button type="button" class="btn fant" id="bml">Envoyer par courriel</button>
+            <button type="submit" class="btn fant" id="bml">Envoyer le message</button>
           </div>
           <p class="erreur aide" id="err" role="alert"></p>
+          <p class="envoye" id="ok" role="status" tabindex="-1" hidden><b>Merci, votre message nous est bien parvenu.</b>
+            Nous vous répondons sous 24 heures ouvrées, par téléphone ou par courriel.</p>
         </form></div>
       <div>
         <ul class="coord">
