@@ -10,6 +10,7 @@ Les documents internes sont dans le dépôt privé `dbinformatique/dbinfo-docume
 |---|---|
 | `/` | `index.html` — **page unique** : domaines d'intervention (sans prix), Socle Souverain, méthode, garanties, questions, contact |
 | `/diagnostic/` | `diagnostic/index.html` — évaluation en ligne en 12 questions |
+| `/astuces/` | `astuces/index.html` — « L'astuce D&B » : une fiche par astuce vidéo (étapes, raccourcis, lien vers la vidéo Facebook) |
 | `/mentions-legales/` | `mentions-legales/index.html` — mentions, confidentialité, signalement de failles |
 | (toute adresse inconnue) | `404.html` |
 
@@ -28,6 +29,11 @@ serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 - `netlify.toml`, `.nojekyll`, `robots.txt`, `sitemap.xml` : fichiers techniques — ne pas supprimer. (`CNAME` a été retiré le 9 octobre 2026 : il ne servait qu'à GitHub Pages.)
 - **Pied de page** : le « © » est un lien discret (classe `discret`, aucun style visible) vers l'espace de gestion de l'entreprise, hébergé sur un autre site. Ne pas le retirer, ne pas le mettre en évidence, ne pas écrire son adresse dans ce dépôt public (ajout d'octobre 2026).
 - `assets/apercu.png` : image affichée quand le lien du site est partagé (WhatsApp, Facebook, LinkedIn). Après l'avoir changée, incrémenter `?v=` dans les balises `og:image`.
+
+## Page « Astuces » : mise à jour mensuelle
+Une astuce vidéo paraît chaque mercredi à 8 h sur Facebook et WhatsApp (catalogue et vidéos : dépôt privé, `03_Supports_Commerciaux/Astuces_Video/`).
+La page `/astuces/` est mise à jour **une fois par mois, à la fin du mois**, avec les astuces du mois : une seule publication (15 crédits).
+Pour chaque astuce : une fiche `<article class="carte astuce">` (image `assets/img/astuces/astuce-NN.jpg`, 800 × 450, environ 20 Ko), les étapes en texte, les touches en `<kbd>`, et le lien vers la publication Facebook.
 
 ## Règles de sécurité du site
 1. **Aucun script ni style écrit directement dans les pages** (pas de `<script>…</script>`, pas de `style="…"`, pas de `onclick=`). Chaque page déclare une politique de sécurité du contenu (CSP) qui les bloque : tout passe par `assets/`.
