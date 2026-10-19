@@ -15,6 +15,7 @@ Les documents internes sont dans le dépôt privé `dbinformatique/dbinfo-docume
 | (toute adresse inconnue) | `404.html` |
 
 Sections de la page unique : `#offres`, `#socle`, `#methode`, `#garanties`, `#questions`, `#contact`.
+**Lien discret vers l'application interne** : le « © » du pied de page de `index.html` (classe `discret`, même couleur que le texte, sans soulignement) ouvre `https://gestion.dbinformatique.cm/` (DB_Gestion, dépôt `db-gestion`). Ne pas le rendre plus visible.
 **La section « Le fondateur » est masquée depuis le 9 octobre 2026** (à réafficher plus tard) : son code et le portrait sont conservés dans le dépôt privé (`dbinfo-documents/03_Supports_Commerciaux/Site_Web/fondateur_masque/`), pas ici. Elle est remplacée par la section `#garanties` (expérience et certifications, sans nom ni photo) ; les anciennes adresses `/fondateur/` et `/parcours.html` y renvoient.
 Les anciennes adresses (`/offres/`, `/socle-souverain/`, `/methode/`, `/fondateur/`, `/contact/` et les `.html`) sont redirigées (301) par `netlify.toml` vers la section correspondante. **Ne jamais recréer de fichier `diagnostic.html` ou `mentions-legales.html`** à la racine : Netlify le servirait à la place du dossier du même nom et créerait une boucle de redirection (incident du 10 octobre 2026).
 Tous les liens et ressources sont absolus depuis la racine (`/assets/…`, `/#offres`) : pour un aperçu local, lancer un petit
