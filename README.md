@@ -31,7 +31,7 @@ serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 - `assets/apercu.png` : image affichée quand le lien du site est partagé (WhatsApp, Facebook, LinkedIn). Après l'avoir changée, incrémenter `?v=` dans les balises `og:image`.
 
 ## Page « Astuces » : mise à jour mensuelle
-Une astuce vidéo paraît chaque mercredi à 8 h sur Facebook et WhatsApp (catalogue et vidéos : dépôt privé, `03_Supports_Commerciaux/Astuces_Video/`).
+Une astuce vidéo paraît chaque mercredi à 8 h sur Facebook, YouTube et WhatsApp (catalogue et vidéos : dépôt privé, `03_Supports_Commerciaux/Astuces_Video/`).
 La page `/astuces/` est mise à jour **une fois par mois, à la fin du mois**, avec les astuces du mois : une seule publication (15 crédits).
 Pour chaque astuce : une fiche `<article class="carte astuce">` (image `assets/img/astuces/astuce-NN.jpg`, 800 × 450, environ 20 Ko), les étapes en texte, les touches en `<kbd>`, et le lien vers la publication Facebook.
 
@@ -44,6 +44,7 @@ Pour chaque astuce : une fiche `<article class="carte astuce">` (image `assets/i
 ## Coordonnées utilisées partout
 - Téléphone et WhatsApp : **+237 674 496 342** (`tel:+237674496342`, `https://wa.me/237674496342`)
 - Courriel : `contact@dbinformatique.cm`
+- Facebook : `https://www.facebook.com/dbinformatique17` · YouTube : `https://www.youtube.com/@dbinformatique-cm` (pied de page de chaque page, `sameAs` de `index.html`)
 - Mentions : D&B Informatique SARL — capital 1 000 000 FCFA — RCCM et NIU en cours d'attribution (à compléter dès réception, dans le pied de page et dans `mentions-legales/index.html`).
 
 ## Modifier le site
