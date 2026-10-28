@@ -518,6 +518,16 @@ footer.bas .fin a.discret{color:inherit;text-decoration:none;cursor:text}
   *{transition:none!important;animation:none!important}
   .btn:hover,.carte:hover{transform:none}
 }
+/* Page « Astuces » (L'astuce D&B) */
+.astuce img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--ligne);margin-bottom:18px}
+.astuce .meta{font-size:12.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--indigo);margin-bottom:8px}
+.astuce ol{list-style:decimal;margin:16px 0 0 22px}
+.astuce ol li{padding-left:4px}
+.astuce ol li::before{content:none}
+kbd{display:inline-block;padding:0 8px;border:1px solid #C9CFEA;border-bottom-width:3px;border-radius:7px;background:var(--pale-2);
+  font-family:inherit;font-size:.9em;font-weight:700;line-height:1.7;color:var(--encre);white-space:nowrap}
+.note-astuces{margin-top:28px;color:var(--gris);font-size:15px}
+
 @media print{
   .hero::before,section.pale::before,section.encre::before,.cta::before{display:none}
   header.top,.wa,.burger,.quiz .nav,.quiz .cta-q,footer.bas{display:none}
@@ -525,3 +535,10 @@ footer.bas .fin a.discret{color:inherit;text-decoration:none;cursor:text}
   .hero,section.encre,.cta{background:#fff!important;color:#000!important}
   .hero h1,.cta h2{color:#000!important}
 }
+/* Nos réalisations */
+.carte.realisation{display:flex;flex-direction:column}
+.carte.realisation p:not(.pour){flex:1}
+.carte .pour{margin-top:14px;padding-top:12px;border-top:1px solid var(--ligne);font-size:14px;color:var(--texte)}
+.carte .pour span{font-weight:800;color:var(--indigo)}
+.note-realisations{margin-top:26px;text-align:center;color:var(--gris)}
+.cta-realisations{margin-top:16px;text-align:center}
