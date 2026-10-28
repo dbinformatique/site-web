@@ -28,6 +28,7 @@ serveur web dans le dossier plutôt qu'ouvrir les fichiers par double-clic.
 - **Formulaire de contact** : envoyé par **Netlify Forms** (formulaire `contact`, champ piège `bot-field`). Réglages côté Netlify : Forms ▸ détection des formulaires activée ; notification par courriel vers contact@dbinformatique.cm. Les demandes reçues sont aussi visibles dans Netlify ▸ Forms.
 - `.well-known/security.txt` : contact pour signaler une faille (à renouveler avant le 1er octobre 2027).
 - `netlify.toml`, `.nojekyll`, `robots.txt`, `sitemap.xml` : fichiers techniques — ne pas supprimer. (`CNAME` a été retiré le 9 octobre 2026 : il ne servait qu'à GitHub Pages.)
+- **Pied de page** : le « © » est un lien discret (classe `discret`, aucun style visible) vers l'espace de gestion de l'entreprise, hébergé sur un autre site. Ne pas le retirer, ne pas le mettre en évidence, ne pas écrire son adresse dans ce dépôt public (ajout d'octobre 2026).
 - `assets/apercu.png` : image affichée quand le lien du site est partagé (WhatsApp, Facebook, LinkedIn). Après l'avoir changée, incrémenter `?v=` dans les balises `og:image`.
 
 ## Page « Astuces » : mise à jour mensuelle
