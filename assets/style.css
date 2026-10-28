@@ -535,3 +535,10 @@ kbd{display:inline-block;padding:0 8px;border:1px solid #C9CFEA;border-bottom-wi
   .hero,section.encre,.cta{background:#fff!important;color:#000!important}
   .hero h1,.cta h2{color:#000!important}
 }
+/* Nos réalisations */
+.carte.realisation{display:flex;flex-direction:column}
+.carte.realisation p:not(.pour){flex:1}
+.carte .pour{margin-top:14px;padding-top:12px;border-top:1px solid var(--ligne);font-size:14px;color:var(--texte)}
+.carte .pour span{font-weight:800;color:var(--indigo)}
+.note-realisations{margin-top:26px;text-align:center;color:var(--gris)}
+.cta-realisations{margin-top:16px;text-align:center}
